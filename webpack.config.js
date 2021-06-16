@@ -11,7 +11,7 @@ module.exports = {
   entry: './index.js',
   output: {
   	filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'docs')
   },
   
   module: {
@@ -60,7 +60,7 @@ plugins: [
 	patterns: [
 		{
 		from: path.resolve(__dirname, 'src/assets/favicon.ico'),
-		to: path.resolve(__dirname, 'dist')
+		to: path.resolve(__dirname, 'docs')
 		}
   		]
 	}),
