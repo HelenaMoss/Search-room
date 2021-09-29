@@ -1,11 +1,56 @@
-@import "roboto.scss";
+//ПЕРЕМЕННЫЕ===============================================================
+$WhiteColor: #FFFFFF; //белый 
+$DarkColor: #1F2041; //серый 100% 
+$DarkColortwo: rgba(31, 32, 65, 0.5); //серый 50% 
+$PurpleColor: #BC9CFF; //фиолетовый цвет
+$PurpleTwoColor: #8BA4F9; //второй фиолетовый цвет
+$GreenColor: #6FCF97; //зеленый цвет
+$BlueColor: #66D2EA; //синий цвет
+
+$fontsize: 10px; //объявление переменной для размера шрифта
+
+$minWidth: 320px; //минимальное значение ширины страницы
+$maxWidth: 1440; //максимальное значение ширины страницы
+$maxWidthContainer: 1160; //максимальное значение ширины контентной части 
+$md1: $maxWidthContainer + 12;
+
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+//ИМПОРТЫ==================================================================
+@import "fonts.scss";
+@import "icons.scss";
+@import "header.scss";
+
+
+//ОСНОВНАЯ СЕТКА============================================================
+._container {
+	max-width: $maxWidthContainer + px; //максимальное значение ширины контентной части + отступы безопасности по 15px c каждой стороны (значение padding)
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+
+
+
 
 body {
-	background: yellow;
+	background: $PurpleColor; //использование переменной для определения цвета
 }
 
 h1 {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Montserrat-Bold', sans-serif;
+	font-size: 18px;
+	position: relative;
+	top: 100px;
+}
+
+pre {
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-size: $fontsize; //использование переменной для определения размера шрифта
+	position: relative;
+	top: 100px;
 }
 
 .logo {
@@ -15,4 +60,6 @@ h1 {
 	width: 100px;
 	margin-top: 15px;
 	margin-left: 15px;
+	position: relative;
+	top: 100px;
 }
