@@ -1,0 +1,333 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url(079ca05d3ded9bc107ab8a8da013be22.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url(3cd786652b8a2e9d41f210cb1a527ff6.ttf) format("truetype");
+}
+@font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url(7896b58ddc7895f5d6bf0921c70ca00a.eot);
+  src: url(7896b58ddc7895f5d6bf0921c70ca00a.eot#iefix) format("embedded-opentype"), url(ade4f33025b11ffb43d5816cbef5ec2f.ttf) format("truetype"), url(8cc6b38845bcb18934b1e08f971d1792.woff) format("woff"), url(5e515bc55e6340e010626e27d31b7c1f.svg#icons) format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^=_icon-]:before,
+[class*=" _icon-"]:before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^=_icon-]:before,
+[class*=" _icon-"]:before {
+  display: block;
+}
+
+._icon-minus:before {
+  content: "";
+}
+
+._icon-plus:before {
+  content: "";
+}
+
+._icon-arrow:before {
+  content: "";
+}
+
+._icon-circle:before {
+  content: "";
+}
+
+._icon-arrow_up:before {
+  content: "";
+}
+
+._icon-arrow_down:before {
+  content: "";
+}
+
+._icon-favorite:before {
+  content: "";
+}
+
+._icon-favorite_border:before {
+  content: "";
+}
+
+._icon-ellipse:before {
+  content: "";
+}
+
+._icon-logo:before {
+  content: "";
+}
+
+._icon-info:before {
+  content: "";
+}
+
+._icon-smile:before {
+  content: "";
+}
+
+._icon-city:before {
+  content: "";
+}
+
+._icon-logotext:before {
+  content: "";
+}
+
+._icon-ellipse_border:before {
+  content: "";
+}
+
+._icon-star:before {
+  content: "";
+}
+
+._icon-star_border:before {
+  content: "";
+}
+
+._icon-toxin:before {
+  content: "";
+}
+
+._icon-ellipse_button:before {
+  content: "";
+}
+
+._icon-circle_button:before {
+  content: "";
+}
+
+._icon-check_mark:before {
+  content: "";
+}
+
+._icon-facebook:before {
+  content: "";
+}
+
+._icon-twitter:before {
+  content: "";
+}
+
+._icon-instagram:before {
+  content: "";
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: #FFFFFF;
+}
+
+/*Фиксирование шапки на странице*/
+.header__wrapper {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 50;
+}
+
+/*Тело шапки*/
+.header__body {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  min-height: 70px;
+  background: #FFFFFF;
+}
+
+/*Оболочка для логотипа и меню*/
+.header__main {
+  display: flex;
+  align-items: center;
+  flex: 0 0 73.8793103448%;
+}
+
+/*Логотип*/
+.header__logo {
+  flex: 0 1 286px;
+  background-image: url(82b4291f360b79033292d522fd131a55.svg);
+  background-repeat: no-repeat;
+  background-position: left;
+  height: 40px;
+  width: 105.69px;
+}
+
+/*Меню*/
+.menu {
+  flex: 0 1 466px;
+}
+
+@media (min-width: 767.98px) {
+  .menu__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}
+
+.menu__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 3px;
+  padding: 5px 0;
+  position: relative;
+}
+@media (any-hover: hover) {
+  .menu__item:hover .menu__sub-list {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  .menu__item:hover .menu__arrow {
+    transform: rotate(-180deg);
+  }
+  .menu__item:hover .menu__arrow,
+.menu__item:hover .menu__link {
+    color: #6FCF97;
+  }
+}
+
+.menu__link {
+  text-decoration: none;
+  font-family: "Montserrat-Regular", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(31, 32, 65, 0.5);
+  transition: color 1s ease 0s;
+}
+
+/*Стрелка в выпадающем меню*/
+.menu__arrow {
+  margin: 0 0 0 1px;
+  transition: all 0.3s ease 0s;
+  line-height: 20px;
+  font-size: 7px;
+  border: none;
+  background: none;
+  color: rgba(31, 32, 65, 0.5);
+}
+
+/*Выпадающее меню*/
+.menu__sub-list {
+  position: relative;
+  background-color: lightgrey;
+  padding: 15px;
+  flex: 1 1 100%;
+  list-style-type: none;
+}
+@media (min-width: 767.98px) {
+  .menu__sub-list {
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+    visibility: hidden;
+    min-width: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+  }
+}
+
+/*Элементы выпадающего меню*/
+.menu__sub-item:not(:last-child) {
+  margin: 0 0 3px 0;
+}
+
+/*Ссылки в выпадающем меню*/
+.menu__sub-link {
+  text-decoration: none;
+  color: rgba(31, 32, 65, 0.5);
+  font-family: "Montserrat-Regular", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+/*Меню-бургер*/
+/*Авторизация на сайте*/
+/*Войти*/
+.header__entrance-link {
+  text-decoration: none;
+  font-family: "Montserrat-Regular", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(31, 32, 65, 0.5);
+}
+
+/*Регистрация*/
+.header__registration-link {
+  text-decoration: none;
+  font-family: "Montserrat-Regular", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(31, 32, 65, 0.5);
+}
+
+._container {
+  max-width: 1160px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+body {
+  background: #BC9CFF;
+  background-image: url(46cf1e2918acfcbc6036b25c8d43622f.jpg);
+  background-repeat: repeat;
+  background-size: 140px 140px;
+}
+
+h1 {
+  font-family: "Montserrat-Bold", sans-serif;
+  font-size: 18px;
+  position: relative;
+  top: 100px;
+}
+
+pre {
+  font-family: "Montserrat-Regular", sans-serif;
+  font-size: 10px;
+  position: relative;
+  top: 100px;
+}
+
+.logo {
+  background-image: url(47692505d122dbcae490be2492a60b2e.png);
+  background-size: cover;
+  height: 100px;
+  width: 100px;
+  margin-top: 15px;
+  margin-left: 15px;
+  position: relative;
+  top: 100px;
+}
