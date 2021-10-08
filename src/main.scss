@@ -37,6 +37,9 @@ $md4: 479.98;
 
 body {
 	background: $PurpleColor; //использование переменной для определения цвета
+	background-image: url('./assets/img/15.jpg');
+	background-repeat: repeat;
+	background-size: 140px 150px; 
 }
 
 h1 {

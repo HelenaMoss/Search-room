@@ -166,26 +166,28 @@
 
 /*Логотип*/
 .header__logo {
+  flex: 0 1 286px;
   background-image: url(82b4291f360b79033292d522fd131a55.svg);
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-position: left;
   height: 40px;
   width: 105.69px;
 }
 
 /*Меню*/
 .menu {
-  flex: 0 1 751px;
-  /*Стрелка в выпадающем меню*/
+  flex: 0 1 466px;
 }
+
 @media (min-width: 767.98px) {
-  .menu .menu__list {
+  .menu__list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
 }
-.menu .menu__item {
+
+.menu__item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -194,7 +196,22 @@
   padding: 5px 0;
   position: relative;
 }
-.menu .menu__link {
+@media (any-hover: hover) {
+  .menu__item:hover .menu__sub-list {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  .menu__item:hover .menu__arrow {
+    transform: rotate(-180deg);
+  }
+  .menu__item:hover .menu__arrow,
+.menu__item:hover .menu__link {
+    color: #6FCF97;
+  }
+}
+
+.menu__link {
   text-decoration: none;
   font-family: "Montserrat-Regular", sans-serif;
   font-style: normal;
@@ -204,7 +221,9 @@
   color: rgba(31, 32, 65, 0.5);
   transition: color 1s ease 0s;
 }
-.menu .menu__arrow {
+
+/*Стрелка в выпадающем меню*/
+.menu__arrow {
   margin: 0 0 0 1px;
   transition: all 0.3s ease 0s;
   line-height: 20px;
@@ -213,9 +232,45 @@
   background: none;
   color: rgba(31, 32, 65, 0.5);
 }
-.menu .menu__sub-list {
-  display: none;
+
+/*Выпадающее меню*/
+.menu__sub-list {
+  position: relative;
+  background-color: lightgrey;
+  padding: 15px;
+  flex: 1 1 100%;
+  list-style-type: none;
 }
+@media (min-width: 767.98px) {
+  .menu__sub-list {
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+    visibility: hidden;
+    min-width: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+  }
+}
+
+/*Элементы выпадающего меню*/
+.menu__sub-item:not(:last-child) {
+  margin: 0 0 3px 0;
+}
+
+/*Ссылки в выпадающем меню*/
+.menu__sub-link {
+  text-decoration: none;
+  color: rgba(31, 32, 65, 0.5);
+  font-family: "Montserrat-Regular", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+/*Меню-бургер*/
 /*Авторизация на сайте*/
 /*Войти*/
 .header__entrance-link {
@@ -247,6 +302,9 @@
 
 body {
   background: #BC9CFF;
+  background-image: url(46cf1e2918acfcbc6036b25c8d43622f.jpg);
+  background-repeat: repeat;
+  background-size: 140px 150px;
 }
 
 h1 {

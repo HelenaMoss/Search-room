@@ -37,9 +37,10 @@ flex: 0 0 857/1160 * 100%; //Задаём размеры блока в % от е
 
 /*Логотип*/
 .header__logo {
+	flex: 0 1 286px; //Адаптивно задаются размеры блока Меню
 	background-image: url('./assets/img/logo.svg');
 	background-repeat: no-repeat;
-	background-size: 100% 100%; 
+	background-position: left; 
 	height: 40px;
 	width: 105.69px;
    }
@@ -48,8 +49,8 @@ flex: 0 0 857/1160 * 100%; //Задаём размеры блока в % от е
 .header__menu {}
 
 .menu {
-	flex: 0 1 751px; //Адаптивно задаются размеры блока Меню
-
+	flex: 0 1 466px; //Адаптивно задаются размеры блока Меню
+}
 	.menu__body {}
 
 	.menu__list {
@@ -68,6 +69,22 @@ flex: 0 0 857/1160 * 100%; //Задаём размеры блока в % от е
 		margin: 0 3px;
 		padding: 5px 0;
 		position: relative;
+		@media (any-hover: hover){ // Показывается подменю при наведении мыши на родительский элемент
+			&:hover{
+				.menu__sub-list {
+					opacity: 1;
+					visibility: visible;
+					pointer-events: auto;
+				}
+				.menu__arrow {
+					transform: rotate(-180deg); // Поворот стрелки на 180 градусов
+				}
+				.menu__arrow,
+				.menu__link {
+					color: $GreenColor;
+				}
+			}
+		} 
 	}
 
 	.menu__link {
@@ -78,7 +95,7 @@ flex: 0 0 857/1160 * 100%; //Задаём размеры блока в % от е
 		font-size: 14px;
 		line-height: 17px;
 		color: $DarkColortwo; //Dark 50%
-		transition: color 1s ease 0s;//Подсвечмвание элементов меню при раскрытии выпадающего списка
+		transition: color 1s ease 0s; //Подсвечмвание элементов меню при раскрытии выпадающего списка
 	}
 
 	/*Стрелка в выпадающем меню*/
@@ -94,16 +111,47 @@ flex: 0 0 857/1160 * 100%; //Задаём размеры блока в % от е
 
 		._icon-arrow_down {}
 
+
+	/*Выпадающее меню*/
 	.menu__sub-list {
-		display: none; //Скрываются подпункуты меню
+		position: relative;
+		background-color: lightgrey;
+		padding: 15px;
+		flex: 1 1 100%;
+		list-style-type: none;
+		@media (min-width: $md3+px) {
+			opacity: 0;
+			transition: all 0.3s ease 0s;
+			visibility: hidden; // Свойство предназначен для отображения или скрытия элемента
+			min-width: 100%;
+			left: 0;
+			pointer-events: none;
+			position: absolute;
+			top: 100%;
+		} 
 	}
 
-	.menu__sub-item {}
+	/*Элементы выпадающего меню*/
+	.menu__sub-item {
+		&:not(:last-child) {
+			margin: 0 0 3px 0; // Задается отступ снизу всем элементам, кроме последнего
+		}
+	}
 
-	.menu__sub-link {}
+	/*Ссылки в выпадающем меню*/
+	.menu__sub-link {
+		text-decoration: none;
+		color: $DarkColortwo; //Dark 50%
+	    font-family: 'Montserrat-Regular', sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 17px; 
+	}
 
-	.icon-menu {} //меню-бургер
-}
+	/*Меню-бургер*/
+	.icon-menu {} 
+
 
 	/*Авторизация на сайте*/
 	.header__authorization {}
