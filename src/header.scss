@@ -10,6 +10,7 @@ background: #FFFFFF;
 .header__wrapper {
 position: fixed;
 width: 100%;
+background: #FFF;
 left: 0;
 top: 0;
 z-index: 50;
@@ -17,14 +18,20 @@ z-index: 50;
 
 .header__container {}
 
-._container {}
+._container {
+background: #FFF;
+margin: 0 auto;
+}
+
 
 /*Тело шапки*/
 .header__body {
+margin: auto;
 display: flex; //Выстраивание всех объектов в ряд
 align-items: center; //Расположение объектов по центру
-padding: 5px 0;
+padding: 0;
 min-height: 70px; //Задаётся высота шапки
+max-width: $maxWidthContainer; //Максимальное значение ширины контентной части
 background: $WhiteColor;
 }
 
@@ -37,19 +44,23 @@ flex: 0 0 857/1160 * 100%; //Задаём размеры блока в % от е
 
 /*Логотип*/
 .header__logo {
-	flex: 0 1 286px; //Адаптивно задаются размеры блока Меню
+	//background: orange;
+	flex: 0 0 106px; //Адаптивно задаются размеры блока Меню
 	background-image: url('./assets/img/logo.svg');
 	background-repeat: no-repeat;
 	background-position: left; 
 	height: 40px;
-	width: 105.69px;
+	width: 106px;
    }
 
 /*Меню*/
 .header__menu {}
 
 .menu {
-	flex: 0 1 466px; //Адаптивно задаются размеры блока Меню
+	//background: pink;
+	display: flex;
+	flex: 0 1 725px; //Адаптивно задаются размеры блока Меню
+	justify-content: flex-end;
 }
 	.menu__body {}
 
@@ -66,11 +77,27 @@ flex: 0 0 857/1160 * 100%; //Задаём размеры блока в % от е
 		align-items: center;
 		justify-content: space-between;
 		flex-wrap: wrap;
-		margin: 0 3px;
+		margin-left: 22px; // Отступ слева между элементами меню
 		padding: 5px 0;
 		position: relative;
 		@media (any-hover: hover){ // Показывается подменю при наведении мыши на родительский элемент
 			&:hover{
+				.menu__sub-list {
+					opacity: 1;
+					visibility: visible;
+					pointer-events: auto;
+				}
+				.menu__arrow {
+					transform: rotate(-180deg); // Поворот стрелки на 180 градусов
+				}
+				.menu__arrow,
+				.menu__link {
+					color: $GreenColor;
+				}
+			}
+		}
+		@media (min-width: $md3+px) {
+			&._hover {
 				.menu__sub-list {
 					opacity: 1;
 					visibility: visible;
@@ -104,8 +131,8 @@ flex: 0 0 857/1160 * 100%; //Задаём размеры блока в % от е
 		transition: all 0.3s ease 0s;
 		line-height: 20px;
 		font-size: 7px;
-		border: none;
-		background: none;
+		border: none; //Отмена обводки кнопки по умолчанию 
+		background: none; //Отмена обводки кнопки по умолчанию
 		color: $DarkColortwo; //Dark 50%
 	}
 
@@ -154,30 +181,63 @@ flex: 0 0 857/1160 * 100%; //Задаём размеры блока в % от е
 
 
 	/*Авторизация на сайте*/
-	.header__authorization {}
+	.header__authorization {
+		//background: lightgreen;
+		position: relative;
+		z-index: 5;
+		display: grid;
+		grid-auto-flow: column; // Все элементы выстраиваются в ряд
+		align-items: center;
+		column-gap: 20px; // Отступы между элементами (ячейками grid)
+	}
 
 	/*Войти*/
 	.header__entrance {}
 
+	/*Кнопка "Войти"*/
+	button.header__entrance-button {
+		border: none; //Отмена обводки кнопки по умолчанию 
+		background: none; //Отмена обводки кнопки по умолчанию
+		background-image: url('./assets/img/entrance-button.svg');
+		background-repeat: no-repeat;
+		background-position: center; 
+		width: 87px;
+		height: 34px;
+	}
+
+	/*Ссылка в кнопке "Войти"*/
 	.header__entrance-link {
 		text-decoration: none;
-		font-family: 'Montserrat-Regular', sans-serif;
+		font-family: 'Montserrat-Bold', sans-serif;
 		font-style: normal;
-		font-weight: normal;
-		font-size: 14px;
-		line-height: 17px;
-		color: $DarkColortwo; //Dark 50%	
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 15px;
+		text-transform: uppercase;
+		color: $PurpleColor; //Фиолетовый цвет	
 	}
 
 	/*Регистрация*/
 	.header__registration {}
 
+	/*Кнопка "Регистрация"*/
+	button.header__registration-button {
+		border: none;
+		background: none;
+		background-image: url('./assets/img/registration-button.svg');
+		background-repeat: no-repeat;
+		width: 196px;
+		height: 34px;
+	}
+
+	/*Ссылка в кнопке "Регистрация"*/
 	.header__registration-link {
 		text-decoration: none;
-		font-family: 'Montserrat-Regular', sans-serif;
+		font-family: 'Montserrat-Bold', sans-serif;
 		font-style: normal;
-		font-weight: normal;
-		font-size: 14px;
-		line-height: 17px;
-		color: $DarkColortwo; //Dark 50%
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 15px;
+		text-transform: uppercase;
+		color: $WhiteColor; //Dark 50%
 	}

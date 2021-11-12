@@ -7,11 +7,11 @@ $PurpleTwoColor: #8BA4F9; //второй фиолетовый цвет
 $GreenColor: #6FCF97; //зеленый цвет
 $BlueColor: #66D2EA; //синий цвет
 
-$fontsize: 10px; //объявление переменной для размера шрифта
+$fontsize: 14px; //объявление переменной для размера шрифта
 
 $minWidth: 320px; //минимальное значение ширины страницы
-$maxWidth: 1440; //максимальное значение ширины страницы
-$maxWidthContainer: 1160; //максимальное значение ширины контентной части 
+$maxWidth: 1440px; //максимальное значение ширины страницы
+$maxWidthContainer: 1160px; //максимальное значение ширины контентной части 
 $md1: $maxWidthContainer + 12;
 
 $md2: 991.98;
@@ -22,38 +22,31 @@ $md4: 479.98;
 @import "fonts.scss";
 @import "icons.scss";
 @import "header.scss";
+@import "content.scss";
 
 
 //ОСНОВНАЯ СЕТКА============================================================
-._container {
-	max-width: $maxWidthContainer + px; //максимальное значение ширины контентной части + отступы безопасности по 15px c каждой стороны (значение padding)
-	padding: 0 15px;
-	margin: 0 auto;
-}
-
-
-
-
 
 body {
-	background: $PurpleColor; //использование переменной для определения цвета
-	background-image: url('./assets/img/15.jpg');
-	background-repeat: repeat;
-	background-size: 140px 150px; 
+	background: $WhiteColor; //использование переменной для определения цвета
+	border: 0; /*Обнуление предустановленного в браузере отступа*/
+ 	margin: 0; /*Обнуление предустановленного в браузере отступа*/
+  	padding: 0; /*Обнуление предустановленного в браузере отступа*/
 }
 
+
+/*
 h1 {
 	font-family: 'Montserrat-Bold', sans-serif;
 	font-size: 18px;
-	position: relative;
-	top: 100px;
+	
 }
 
 pre {
 	font-family: 'Montserrat-Regular', sans-serif;
 	font-size: $fontsize; //использование переменной для определения размера шрифта
 	position: relative;
-	top: 100px;
+	top: 10px;
 }
 
 .logo {
@@ -64,5 +57,6 @@ pre {
 	margin-top: 15px;
 	margin-left: 15px;
 	position: relative;
-	top: 100px;
-}
+	top: 10px;
+}*/
+
