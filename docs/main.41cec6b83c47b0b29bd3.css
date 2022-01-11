@@ -132,11 +132,11 @@
 }
 
 .header {
+  background: #FFF;
   position: absolute;
   width: 100%;
   left: 0;
   top: 0;
-  background: #FFFFFF;
 }
 
 /*Фиксирование шапки на странице*/
@@ -150,7 +150,8 @@
 }
 
 ._container {
-  background: #FFF;
+  max-width: 1160px;
+  padding: 0 15px;
   margin: 0 auto;
 }
 
@@ -158,23 +159,34 @@
 .header__body {
   margin: auto;
   display: flex;
-  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   padding: 0;
   min-height: 70px;
   max-width: 1160px;
-  background: #FFFFFF;
+  align-items: center;
+  flex: 0 1 1160px;
+}
+@media (max-width: 945px) {
+  .header__body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 6px;
+  }
 }
 
 /*Оболочка для логотипа и меню*/
+/*
 .header__main {
-  display: flex;
-  align-items: center;
-  flex: 0 0 73.8793103448%;
-}
-
+display: flex;
+flex-wrap: nowrap;
+justify-content: flex-start; //Выравнивание элементов по горизонтали
+align-items: center; //Выравнивание объектов по вертикали в однострочном режиме
+flex: 0 1 857/1160 * 100%; //Задаём размеры блока в % от его общей ширины
+}*/
 /*Логотип*/
 .header__logo {
-  flex: 0 0 106px;
   background-image: url(82b4291f360b79033292d522fd131a55.svg);
   background-repeat: no-repeat;
   background-position: left;
@@ -183,50 +195,80 @@
 }
 
 /*Меню*/
-.menu {
+.header__menu {
   display: flex;
   flex: 0 1 725px;
+  flex-wrap: nowrap;
   justify-content: flex-end;
 }
+@media (max-width: 945px) {
+  .header__menu {
+    display: flex;
+    flex: 0 1 945px;
+    flex-wrap: wrap;
+    justify-content: center;
+    order: 1;
+    margin-bottom: 8px;
+  }
+}
 
+/*Текстовые элементы меню*/
+.menu__list {
+  margin: 0;
+  padding: 0;
+}
 @media (min-width: 767.98px) {
   .menu__list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+  }
+}
+@media (max-width: 969px) {
+  .menu__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
+/* Элементы меню: текcт+стрелки*/
 .menu__item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
   margin-left: 22px;
   padding: 5px 0;
   position: relative;
+}
+@media (max-width: 935px) {
+  .menu__item:first-child {
+    margin-left: 0px;
+  }
 }
 @media (any-hover: hover) {
   .menu__item:hover .menu__sub-list {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+    z-index: 50;
   }
   .menu__item:hover .menu__arrow {
     transform: rotate(-180deg);
+    padding: 0 6px 0 0;
   }
   .menu__item:hover .menu__arrow,
 .menu__item:hover .menu__link {
     color: #6FCF97;
   }
 }
-@media (min-width: 767.98px) {
+@media (max-width: 767.98px) {
   .menu__item._hover .menu__sub-list {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
   }
   .menu__item._hover .menu__arrow {
+    padding: 0 6px 0 0;
     transform: rotate(-180deg);
   }
   .menu__item._hover .menu__arrow,
@@ -235,6 +277,7 @@
   }
 }
 
+/*Текстовые ссылки в меню*/
 .menu__link {
   text-decoration: none;
   font-family: "Montserrat-Regular", sans-serif;
@@ -248,13 +291,59 @@
 
 /*Стрелка в выпадающем меню*/
 .menu__arrow {
-  margin: 0 0 0 1px;
+  margin: 0 0 0 0;
+  padding: 0 0 0 6px;
   transition: all 0.3s ease 0s;
-  line-height: 20px;
-  font-size: 7px;
+  font-size: 8px;
   border: none;
   background: none;
   color: rgba(31, 32, 65, 0.5);
+}
+
+/* Переопределяем отсnуп слева у разделов меню, чтобы выставить их в соответствии с сеткой Pixel Perfect*/
+.menu__item_margin-left-onas {
+  margin-left: 20.7px;
+}
+@media (max-width: 767.98px) {
+  .menu__item_margin-left-onas {
+    margin-left: 0;
+  }
+}
+
+.menu__item_margin-left-uslugi {
+  margin-left: 20.7px;
+}
+@media (max-width: 767.98px) {
+  .menu__item_margin-left-uslugi {
+    margin-left: 22px;
+  }
+}
+
+.menu__item_margin-left-vakancii {
+  margin-left: 25px;
+}
+@media (max-width: 767.98px) {
+  .menu__item_margin-left-vakancii {
+    margin-left: 22px;
+  }
+}
+
+.menu__item_margin-left-novosti {
+  margin-left: 20px;
+}
+@media (max-width: 767.98px) {
+  .menu__item_margin-left-novosti {
+    margin-left: 22px;
+  }
+}
+
+.menu__item_margin-left-soglashenia {
+  margin-left: 21px;
+}
+@media (max-width: 767.98px) {
+  .menu__item_margin-left-soglashenia {
+    margin-left: 22px;
+  }
 }
 
 /*Выпадающее меню*/
@@ -271,10 +360,22 @@
     transition: all 0.3s ease 0s;
     visibility: hidden;
     min-width: 100%;
-    left: 0;
     pointer-events: none;
     position: absolute;
     top: 100%;
+    left: 0;
+  }
+}
+@media (max-width: 767.98px) {
+  .menu__sub-list {
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+    visibility: hidden;
+    min-width: 100%;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
   }
 }
 
@@ -298,11 +399,15 @@
 /*Авторизация на сайте*/
 .header__authorization {
   position: relative;
-  z-index: 5;
-  display: grid;
-  grid-auto-flow: column;
+  display: flex;
   align-items: center;
-  column-gap: 20px;
+}
+@media (max-width: 482px) {
+  .header__authorization {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 25px 0 5px 0;
+  }
 }
 
 /*Войти*/
@@ -310,11 +415,18 @@
 button.header__entrance-button {
   border: none;
   background: none;
-  background-image: url(854612db4b6217162582b09c1f50db51.svg);
+  background-image: url(de511383397808561f609979ff8b92b9.svg);
   background-repeat: no-repeat;
   background-position: center;
   width: 87px;
   height: 34px;
+  margin-right: 20px;
+  margin-left: 27px;
+}
+@media (max-width: 376px) {
+  button.header__entrance-button {
+    margin-bottom: 10px;
+  }
 }
 
 /*Ссылка в кнопке "Войти"*/
@@ -334,7 +446,7 @@ button.header__entrance-button {
 button.header__registration-button {
   border: none;
   background: none;
-  background-image: url(814ca073736e34b3fe742789cac21215.svg);
+  background-image: url(e7dadef9582f71b76de15768d6c77637.svg);
   background-repeat: no-repeat;
   width: 196px;
   height: 34px;
@@ -354,7 +466,6 @@ button.header__registration-button {
 
 .content {
   background: #CC9999;
-  background-image: url(cbaf98ee4ea8c3ba451eba2ac1e0bb7b.jpg);
   background-size: 100% auto;
   background-repeat: no-repeat;
   width: 100%;

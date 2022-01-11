@@ -1,9 +1,9 @@
 .header {
+background: #FFF;
 position: absolute;
 width: 100%;
 left: 0;
 top: 0;
-background: #FFFFFF;
 }
 
 /*Фиксирование шапки на странице*/
@@ -18,35 +18,48 @@ z-index: 50;
 
 .header__container {}
 
+//- Ограничивающий контейнер + отступы от края страницы при адаптиве
 ._container {
-background: #FFF;
-margin: 0 auto;
+max-width: $maxWidthContainer;
+padding: 0 15px; //Добавляются отступы по 15px при уменьшении страницы меньше значения max-width
+margin: 0 auto; 
 }
-
 
 /*Тело шапки*/
 .header__body {
-margin: auto;
-display: flex; //Выстраивание всех объектов в ряд
-align-items: center; //Расположение объектов по центру
+//background: yellow;
+margin: auto; //Центрирование на странице
+display: flex; //Создание flex-контейнера и выстраивание всех объектов в ряд
+flex-wrap: nowrap; //Отмена многострочного режима для flex-контейнера
+justify-content: flex-start; //Выравнивание элементов в одной строке по горизонтали по левому краю
 padding: 0;
-min-height: 70px; //Задаётся высота шапки
-max-width: $maxWidthContainer; //Максимальное значение ширины контентной части
-background: $WhiteColor;
+min-height: 70px; //Задаётся минимальная высота шапки
+max-width: $maxWidthContainer; //задается максимальное значение ширины контентной части
+align-items: center; //Выравнивание объектов по вертикали в однострочном режиме
+flex: 0 1 1160px; //Задаём размеры блока в % от его общей ширины
+//Эти правила действуют при ширине экрана меньше 945px
+@media (max-width: 945px) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			margin-top: 6px; //Отступ сверху для блока с логотипом 
+		} 
 }
 
 /*Оболочка для логотипа и меню*/
+/*
 .header__main {
 display: flex;
-align-items: center;
-flex: 0 0 857/1160 * 100%; //Задаём размеры блока в % от его общей ширины
-}
+flex-wrap: nowrap;
+justify-content: flex-start; //Выравнивание элементов по горизонтали
+align-items: center; //Выравнивание объектов по вертикали в однострочном режиме
+flex: 0 1 857/1160 * 100%; //Задаём размеры блока в % от его общей ширины
+}*/
 
 /*Логотип*/
 .header__logo {
 	//background: orange;
-	flex: 0 0 106px; //Адаптивно задаются размеры блока Меню
-	background-image: url('./assets/img/logo.svg');
+	background-image: url('./assets/img/logo.svg');//Изображение ставиться фоном в блоке
 	background-repeat: no-repeat;
 	background-position: left; 
 	height: 40px;
@@ -54,41 +67,70 @@ flex: 0 0 857/1160 * 100%; //Задаём размеры блока в % от е
    }
 
 /*Меню*/
-.header__menu {}
-
-.menu {
+.header__menu {
 	//background: pink;
 	display: flex;
 	flex: 0 1 725px; //Адаптивно задаются размеры блока Меню
-	justify-content: flex-end;
-}
-	.menu__body {}
+	flex-wrap: nowrap;
+	justify-content: flex-end; //Выравнивание элементов в одной строке по горизонтали по правому краю
+		//Эти правила действуют при ширине экрана меньше 945px
+		@media (max-width: 945px) {
+			display: flex;
+			flex: 0 1 945px; //Адаптивно задаются размеры блока Меню
+			flex-wrap: wrap;
+			justify-content: center;
+			order: 1; //Изменение порядка расположения блока во flex-контейнере
+			margin-bottom: 8px; //Отступ снизу для разделов меню при уменьшенном экране
+		} 
+	}
 
+.menu {}
+
+/*Текстовые элементы меню*/
 	.menu__list {
+	margin: 0;
+	padding: 0;
+	//Эти правила действуют при ширине экрана больше 768px ($md3+px)
 		@media (min-width: $md3+px) {
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: space-evenly;//Равномерно распределяет все элементы по ширине flex-блока. Все элементы имеют равное пространство вокруг.
+		}
+		//Эти правила действуют при ширине экрана меньше 969px 
+		@media (max-width: 969px) {
+			display: flex;
+			flex-wrap: wrap;
+			// flex: 0 1 660px; //Адаптивно задаются размеры блока c текстовыми элементами Меню
+		    justify-content: center;
 		}
 	}
 
+ 	/* Элементы меню: текcт+стрелки*/
 	.menu__item {
+		//background: orange;
 		display: flex; //Поставить элементы меню в ряд c кнопками в виде стрелок
 		align-items: center;
-		justify-content: space-between;
 		flex-wrap: wrap;
-		margin-left: 22px; // Отступ слева между элементами меню
+		margin-left: 22px; //Отступ слева между всеми элементами меню
+		//Эти правила действуют при ширине экрана меньше 969px 
+		@media (max-width: 935px) {
+			&:first-child {
+			margin-left: 0px; //Задается 0 отступ первому элементу в списке 
+			}
+		}
 		padding: 5px 0;
 		position: relative;
-		@media (any-hover: hover){ // Показывается подменю при наведении мыши на родительский элемент
+		//Настройка анимации стрелки и отображения выпадающего меню при наведении указателя мыши на элементы меню
+		@media (any-hover: hover){ //Показывается подменю при наведении мыши на родительский элемент
 			&:hover{
 				.menu__sub-list {
 					opacity: 1;
-					visibility: visible;
+					visibility: visible; //Элемент виден
 					pointer-events: auto;
+					z-index: 50; //Показывает выпадающее меню поверх всех остальных элементов
 				}
 				.menu__arrow {
-					transform: rotate(-180deg); // Поворот стрелки на 180 градусов
+					transform: rotate(-180deg); //Поворот стрелки на 180 градусов
+					padding: 0 6px 0 0; //Создание отступа слева от стрелки. Задется изменением параметра padding-right, так как стрелка перевернется на 180 градусов
 				}
 				.menu__arrow,
 				.menu__link {
@@ -96,7 +138,7 @@ flex: 0 0 857/1160 * 100%; //Задаём размеры блока в % от е
 				}
 			}
 		}
-		@media (min-width: $md3+px) {
+		@media (max-width: $md3+px) {
 			&._hover {
 				.menu__sub-list {
 					opacity: 1;
@@ -104,7 +146,8 @@ flex: 0 0 857/1160 * 100%; //Задаём размеры блока в % от е
 					pointer-events: auto;
 				}
 				.menu__arrow {
-					transform: rotate(-180deg); // Поворот стрелки на 180 градусов
+					padding: 0 6px 0 0; //Отступ слева от стрелки задются padding-right так как стрелка перевернется на 180 градусов
+					transform: rotate(-180deg); //Поворот стрелки на 180 градусов
 				}
 				.menu__arrow,
 				.menu__link {
@@ -114,6 +157,7 @@ flex: 0 0 857/1160 * 100%; //Задаём размеры блока в % от е
 		} 
 	}
 
+	/*Текстовые ссылки в меню*/
 	.menu__link {
 		text-decoration: none;
 		font-family: 'Montserrat-Regular', sans-serif;
@@ -127,13 +171,56 @@ flex: 0 0 857/1160 * 100%; //Задаём размеры блока в % от е
 
 	/*Стрелка в выпадающем меню*/
 	.menu__arrow {
-		margin: 0 0 0 1px;
+		margin: 0 0 0 0;
+		padding: 0 0 0 6px; //Отступ слева между стрелкой и текстовым элементом
 		transition: all 0.3s ease 0s;
-		line-height: 20px;
-		font-size: 7px;
+		font-size: 8px;
 		border: none; //Отмена обводки кнопки по умолчанию 
 		background: none; //Отмена обводки кнопки по умолчанию
 		color: $DarkColortwo; //Dark 50%
+	}
+
+
+	
+	/* Переопределяем отсnуп слева у разделов меню, чтобы выставить их в соответствии с сеткой Pixel Perfect*/
+	.menu__item_margin-left-onas { //Переопределение отступа слева у раздела "О нас"
+		margin-left: 20.7px;
+		//Определение правил поведения для элементов при ширине меньше 768px
+			@media (max-width: $md3+px) {
+			margin-left: 0;
+		}
+	}
+
+	.menu__item_margin-left-uslugi { //Переопределение отступа слева у раздела "Услуги"
+		margin-left: 20.7px;
+		//Определение правил поведения для элементов при размере экрана меньше 768px
+			@media (max-width: $md3+px) {
+			margin-left: 22px;
+		}
+	}
+
+	.menu__item_margin-left-vakancii { //Переопределение отступа слева у раздела "Вакансии"
+		margin-left: 25px;
+			//Определение правил поведения для элементов при размере экрана меньше 768px
+			@media (max-width: $md3+px) {
+			margin-left: 22px;
+		}
+	}
+
+	.menu__item_margin-left-novosti {
+		margin-left: 20px; //Пеереопределение отступа слева у раздела "Новости"
+			//Определение правил поведения для элементов при ширине экрана меньше 768px
+			@media (max-width: $md3+px) {
+			margin-left: 22px;
+		}
+	}
+
+	.menu__item_margin-left-soglashenia { //Переопределение отступа слева у раздела "Соглашение"
+		margin-left: 21px;
+			//Определение правил поведения для элементов при ширине экрана меньше 768px
+			@media (max-width: $md3+px) {
+			margin-left: 22px;
+		}
 	}
 
 		._icon-arrow_down {}
@@ -146,22 +233,34 @@ flex: 0 0 857/1160 * 100%; //Задаём размеры блока в % от е
 		padding: 15px;
 		flex: 1 1 100%;
 		list-style-type: none;
+		//Эти правила действуют при ширине экрана больше $md3+px
 		@media (min-width: $md3+px) {
 			opacity: 0;
 			transition: all 0.3s ease 0s;
-			visibility: hidden; // Свойство предназначен для отображения или скрытия элемента
+			visibility: hidden; //Свойство предназначен для отображения или скрытия элемента
 			min-width: 100%;
-			left: 0;
 			pointer-events: none;
 			position: absolute;
 			top: 100%;
+			left: 0;
+		} 
+		//Эти правила действуют при ширине экрана меньше $md3+px
+		@media (max-width: $md3+px) {
+			opacity: 0;
+			transition: all 0.3s ease 0s;
+			visibility: hidden; //Свойство предназначен для отображения или скрытия элемента
+			min-width: 100%;
+			pointer-events: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
 		} 
 	}
 
 	/*Элементы выпадающего меню*/
 	.menu__sub-item {
 		&:not(:last-child) {
-			margin: 0 0 3px 0; // Задается отступ снизу всем элементам, кроме последнего
+			margin: 0 0 3px 0; //Задается отступ снизу всем элементам, кроме последнего
 		}
 	}
 
@@ -182,13 +281,17 @@ flex: 0 0 857/1160 * 100%; //Задаём размеры блока в % от е
 
 	/*Авторизация на сайте*/
 	.header__authorization {
-		//background: lightgreen;
+		//background: lightblue;
 		position: relative;
-		z-index: 5;
-		display: grid;
-		grid-auto-flow: column; // Все элементы выстраиваются в ряд
-		align-items: center;
-		column-gap: 20px; // Отступы между элементами (ячейками grid)
+		display: flex;
+		align-items: center; //Выравнивание блоков по вертикали
+		//Эти правила действуют при ширине экрана меньше 482px
+		@media (max-width: 482px) {
+			flex-wrap: wrap;
+			justify-content: center;
+			margin: 25px 0 5px 0;
+		}
+
 	}
 
 	/*Войти*/
@@ -203,6 +306,12 @@ flex: 0 0 857/1160 * 100%; //Задаём размеры блока в % от е
 		background-position: center; 
 		width: 87px;
 		height: 34px;
+		margin-right: 20px;
+		margin-left: 27px;
+		//Эти правила действуют при ширине экрана меньше 380px
+		@media (max-width: 376px) {
+			margin-bottom: 10px;
+		}
 	}
 
 	/*Ссылка в кнопке "Войти"*/
