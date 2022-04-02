@@ -1,0 +1,315 @@
+.footer {
+	hr {
+	padding: 0;
+	margin: 0;
+	color: #d1d1d4;
+	}
+	/* .footer__container================Ограничивающий контейнер + отступы безопасности */
+	&__container {
+	max-width: $maxWidthContainer; //Параметр позволяет динамически менять ширину контейнера от 0 до 1160px
+	padding: 0 15px; //Добавляются отступы по 15px при уменьшении страницы меньше значения max-width
+	margin: 0 auto; 
+	}
+	/* .footer__top================================================Верхняя часть подвала */
+	&__top {
+	//background: yellow;
+	margin: auto; //Центрирование на странице
+	display: flex; //Создание flex-контейнера и выстраивание всех объектов в ряд
+	justify-content: flex-start; //Выравнивание элементов в одной строке по горизонтали по левому краю
+	padding: 0;
+	min-height: 372px; //Задаётся минимальная высота шапки
+	//max-width: $maxWidthContainer; //задается максимальное значение ширины контентной части
+	align-items: center; //Выравнивание объектов по вертикали в однострочном режиме
+	flex: 0 1 1160px; //Адаптивно задаются размеры блока
+	}
+	/* .footer__logo=====================================================Блок с логотипом */
+	&__logo{
+	//background: pink;
+	//display: flex;
+	//flex-direction: column; //Вертикальное размещение элементов во flex-контейнере
+	//flex: 0 1 410px; //Адаптивно задаются размеры блока
+	width: 345px; 
+	height: 168px;
+	}
+	/* .footer__logo-img */
+	&__logo-img {
+	//background: orange;
+	background-image: url('./assets/img/logo.svg');//Изображение ставиться фоном в блоке
+	background-repeat: no-repeat;
+	background-position: left; 
+	height: 40px;
+	width: 106px;
+	margin: 0 0 2px 0;
+	}
+	/* .footer__logo-link */
+	&__logo-link {
+	}
+	/* .footer__text */
+	&__text {
+	text-decoration: none;
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 24px;
+	color: $DarkColortwo; //Dark 50%	
+	}
+	/* .footer__navigation==============================================Блок "Навигация" */
+	&__navigation {
+	//background: lightgreen;
+	width: 230px;
+	height: 164px;
+	padding: 0 0 0 28px;
+
+	}
+	/* .footer__about-us====================================================Блок "О нас" */
+	&__about-us {
+	//background: green;
+	width: 220px;
+	height: 162px;
+	padding: 0 0 0 19px;
+	}
+	/* .footer__support==========================================Блок "Служба поддержки" */
+	&__support {
+	//background: lightpink;
+	width: 230px;
+	height: 162px;
+	padding: 0 0 0 28px;
+	}
+	/* .footer__subscription=============================================Блок "Подписка" */
+	&__subscription {
+	//background: lightsteelblue;
+	width: 330px;
+	height: 164px;
+	padding: 0 0 0 19px;	
+	}
+}
+.navigation {
+	/* .navigation__list */
+	&__list {
+	margin: 0;
+	padding: 0;
+	}
+	/* .navigation__item-title */
+	&__item-title {
+	//background: lightgreen;
+	list-style-type: none; //Убираем маркеры 
+	text-transform: uppercase; //Текст заглавными буквами
+	text-decoration: none;
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	color: Dark 100%;
+	margin-bottom: 12px;
+	}
+	/* .navigation__item */
+	&__item {
+	list-style-type: none; //Убираем маркеры
+	}
+	/* .navigation__link */
+	&__link {
+	text-decoration: none;
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 38px;
+	color: $DarkColortwo; //Dark 50%
+	}
+}
+.about-us {
+	/* .about-us__list */
+	&__list {
+	margin: 0;
+	padding: 0;
+	}
+	/* .about-us__item-title */
+	&__item-title {
+	//background: lightgreen;
+	list-style-type: none; //Убираем маркеры 
+	text-transform: uppercase; //Текст заглавными буквами
+	text-decoration: none;
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 11px;
+	color: Dark 100%;
+	margin-bottom: 13px;
+	}
+	/* .about-us__item */
+	&__item {
+	list-style-type: none; //Убираем маркеры
+	}
+	/* .about-us__link */
+	&__link {
+	text-decoration: none;
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 38px;
+	color: $DarkColortwo; //Dark 50%
+	}
+}
+.support {
+	/* .support__list */
+	&__list {
+	margin: 0;
+	padding: 0;
+	}
+	/* .support__item-title */
+	&__item-title {
+	//background: lightpink;
+	list-style-type: none; //Убираем маркеры 
+	text-transform: uppercase; //Текст заглавными буквами
+	text-decoration: none;
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	color: Dark 100%;
+	margin-bottom: 11px;
+	}
+	/* .support__item */
+	&__item {
+	list-style-type: none; //Убираем маркеры
+	}
+	/* .support__link */
+	&__link {
+	text-decoration: none;
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 38px;
+	color: $DarkColortwo; //Dark 50%
+	}
+}
+
+.subscription {
+	/* .subscription__title */
+	&__title {
+	//background: lightpink;
+	list-style-type: none; //Убираем маркеры 
+	text-transform: uppercase; //Текст заглавными буквами
+	text-decoration: none;
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	color: Dark 100%;
+	padding: 0;
+	margin: 0 0 20px 0;
+	}
+	/* .subscription__text */
+	&__text {
+	//background: lightpink;
+	text-decoration: none;
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 24px;
+	color: $DarkColortwo; //Dark 50%
+	}
+	/* .subscription__form-email */
+	&__form-email {
+		margin: 5px 0 0 0;
+		padding-left: 12px;
+		width: 94%;
+		height: 40px;
+		color: #5a5854; /*Цвет текста формы*/
+		background-color: #ffffff; /*Цвет формы*/
+		border: 1px solid #bdbdbd; /*Граница формы*/
+		border-radius: 5px;
+		background-repeat: no-repeat; /*Отменяет повтор вставленной картинки (значение по умолчанию)*/
+		background-position: 95% 50%; /*Местоположение вставленной картинки*/
+		font-family: 'Montserrat-Regular', sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+	}
+	input.subscription__form-email:focus, input:hover { // Используется для изменения цвета фона введенного текста (focus); Применяет стили при наведении указателя мыши (hover) 
+			background-color: #f2f2f2; // Цвет формы
+			border: 1px solid #b1e1e4; // Граница формы
+	}
+	input#img-form { /*Вставка картинки в форму*/
+		background-image: url('./assets/img/arrow_forward.svg');
+	} 
+}
+
+.footer {
+	/* .footer__bottom==============================================Нижняя часть подвала */
+	&__bottom {
+		display: flex;
+		margin-top: 8px;
+	}
+	/* .footer__copyright=======================================================Копирайт */
+	&__copyright {
+	}
+	/* .footer__social-network===========================================Иконки соцсетей */
+	&__social-network {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+	flex: 0 1 114px; //Адаптивно задаются размеры блока
+	}
+	/* .footer__copyright */
+	&__copyright {
+	//background: lightpink;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	flex: 0 1 1031px; //Адаптивно задаются размеры блока
+	padding-right: 20px;
+	}
+	/* .footer__text-copyright */
+	&__text-copyright {
+	margin-top: 15px;
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: $DarkColortwo; //Dark 50%
+	}
+}
+.social-network {
+	/* .social-network__twitter-link */
+	&__twitter-link {
+	}
+	/* .social-network__twitter-icon */
+	&__twitter-icon {	//background: orange;
+	background-image: url('./assets/img/Twitter.svg');//Изображение ставиться фоном в блоке
+	background-repeat: no-repeat;
+	background-position: center; 
+	height: 25px;
+	width: 25px;
+	}
+	/* .social-network__facebook-link */
+	&__facebook-link {
+	}
+	/* .social-network__facebook-icon */
+	&__facebook-icon {
+	background-image: url('./assets/img/Facebook.svg');//Изображение ставиться фоном в блоке
+	background-repeat: no-repeat;
+	background-position: center; 
+	height: 25px;
+	width: 25px;
+	margin-left: 18px;
+	}
+	/* .social-network__instagram-link */
+	&__instagram-link {
+	}
+	/* .social-network__instagram-icon */
+	&__instagram-icon {
+	background-image: url('./assets/img/Instagram.svg');//Изображение ставиться фоном в блоке
+	background-repeat: no-repeat;
+	background-position: center; 
+	height: 25px;
+	width: 25px;
+	margin-left: 18px;
+	}
+}
