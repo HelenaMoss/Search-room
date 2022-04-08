@@ -492,13 +492,39 @@ button.header__registration-button {
   display: flex;
   justify-content: flex-start;
   padding: 0;
-  min-height: 372px;
   align-items: center;
   flex: 0 1 1160px;
+  flex-wrap: wrap;
+  min-height: 372px;
+}
+@media (max-width: 1188px) {
+  .footer__top {
+    justify-content: center;
+    align-content: flex-start;
+  }
+}
+@media (max-width: 360px) {
+  .footer__top {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 .footer__logo {
-  width: 345px;
+  width: 264px;
   height: 168px;
+}
+@media (max-width: 1188px) {
+  .footer__logo {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 600px) {
+  .footer__logo {
+    height: 100%;
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
 }
 .footer__logo-img {
   background-image: url(82b4291f360b79033292d522fd131a55.svg);
@@ -518,24 +544,113 @@ button.header__registration-button {
   color: rgba(31, 32, 65, 0.5);
 }
 .footer__navigation {
-  width: 230px;
+  width: 183px;
   height: 164px;
-  padding: 0 0 0 28px;
+  padding: 0 0 0 34px;
+}
+@media (max-width: 1188px) {
+  .footer__navigation {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .footer__navigation {
+    margin-top: 20px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+@media (max-width: 430px) {
+  .footer__navigation {
+    margin-bottom: 0;
+    margin-top: 13px;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 .footer__about-us {
-  width: 220px;
+  width: 166px;
   height: 162px;
-  padding: 0 0 0 19px;
+  padding: 0 0 0 18px;
+}
+@media (max-width: 1188px) {
+  .footer__about-us {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .footer__about-us {
+    margin-top: 20px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+@media (max-width: 430px) {
+  .footer__about-us {
+    margin-bottom: 35px;
+    margin-top: 45px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+@media (max-width: 418px) {
+  .footer__about-us {
+    margin-bottom: 0;
+    margin-top: 40px;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 .footer__support {
-  width: 230px;
+  width: 175px;
   height: 162px;
-  padding: 0 0 0 28px;
+  padding: 0 0 0 34px;
+}
+@media (max-width: 1188px) {
+  .footer__support {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .footer__support {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+@media (max-width: 430px) {
+  .footer__support {
+    margin-bottom: 35px;
+    margin-top: 45px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+@media (max-width: 418px) {
+  .footer__support {
+    margin-bottom: 0;
+    margin-top: 40px;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 .footer__subscription {
-  width: 330px;
+  width: 260px;
   height: 164px;
-  padding: 0 0 0 19px;
+  padding: 0 0 0 25px;
+}
+@media (max-width: 1188px) {
+  .footer__subscription {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .footer__subscription {
+    width: 90%;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 0 0 0;
+  }
 }
 
 .navigation {
@@ -696,6 +811,16 @@ button.header__registration-button {
   background-image: url(2413294392c28620a3170b63c775c49e.svg);
 }
 
+.line {
+  height: 1px;
+  background: rgba(31, 32, 65, 0.5);
+}
+@media (max-width: 1188px) {
+  .line {
+    margin-top: 25px;
+  }
+}
+
 .footer {
   /* .footer__bottom==============================================Нижняя часть подвала */
   /* .footer__copyright=======================================================Копирайт */
@@ -705,7 +830,7 @@ button.header__registration-button {
 }
 .footer__bottom {
   display: flex;
-  margin-top: 8px;
+  margin-top: 11px;
 }
 .footer__social-network {
   display: flex;
