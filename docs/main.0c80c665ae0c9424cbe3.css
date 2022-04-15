@@ -136,11 +136,12 @@
 }
 
 /*Фиксирование шапки на странице*/
-/* Ограничивающий контейнер + отступы от края страницы при адаптиве*/
+/*Ограничивающий контейнер + отступы от края страницы при адаптиве*/
 .header__container {
   max-width: 1160px;
   padding: 0 15px;
   margin: 0 auto;
+  display: -ms-flexbox;
 }
 
 /*Тело шапки*/
@@ -164,11 +165,9 @@
 
 /*Логотип*/
 .header__logo {
-  background-image: url(82b4291f360b79033292d522fd131a55.svg);
-  background-repeat: no-repeat;
-  background-position: left;
   height: 40px;
-  width: 106px;
+  width: 108px;
+  border: none;
 }
 
 /*Меню*/
@@ -427,7 +426,7 @@ button.header__entrance-button {
   text-decoration: none;
   font-family: "Montserrat-Bold", sans-serif;
   font-style: normal;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 12px;
   line-height: 15px;
   text-transform: uppercase;
@@ -450,7 +449,7 @@ button.header__registration-button {
   text-decoration: none;
   font-family: "Montserrat-Bold", sans-serif;
   font-style: normal;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 12px;
   line-height: 15px;
   text-transform: uppercase;
@@ -460,32 +459,276 @@ button.header__registration-button {
 .content {
   background: #CC9999;
   background-image: url(cbaf98ee4ea8c3ba451eba2ac1e0bb7b.jpg);
-  padding-top: 62.5%;
-  background-size: 1440px 900px;
-  background-position: center center;
+  padding: 5.2% 30% 30% 7.1%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: top center;
+  /*search-room-container=================================Обертка для Блока поиска номеров*/
+  /*.content__search-room-container=======================Обертка для блока поиска номеров*/
+  /*.content__search-room==============================================Блок поиска номеров*/
+  /*.content__text===============================Текст "Найдем номера под ваши пожелания"*/
+  /*.content__form====================================================Форма поиска номеров*/
+  /*Вставка картинки в элементы формы "Прибытие", "Выезд", "Гости"*/
+  /*.content__container-arrivel*/
+  /*.content__button-title-arrivel*/
+  /*.content__button-arrivel======================================Элемент формы "Прибытие"*/
+  /*.content__container-departure*/
+  /*.content__button-title-departure*/
+  /*.content__button-departure=======================================Элемент формы "Выезд"*/
+  /*.content__container-guests*/
+  /*.content__button-title-guests*/
+  /*.content__button-guests=========================================Элемент формы "Гости"*/
+  /*.content__button-guests-how-many*/
+  /*.content__button-guests-adults*/
+  /*.content__button-guests-children*/
+  /*.content__button-guests-infants*/
+  /*.content__button-guests-clear*/
+  /*.content__button-pick-up-number=================================Кнопка подтверждения*/
+  /*.content__button-text==================================Текст в кнопке подтверждения*/
+  /*.content__button-img=============================Изображение в кнопке подтверждения*/
+}
+@media (max-width: 444px) {
+  .content {
+    padding: 10% 0 25% 0;
+  }
+}
+.content .search-room-container {
+  background: white;
+}
+.content__search-room-container {
+  width: 379px;
+  height: 374px;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 444px) {
+  .content__search-room-container {
+    margin: 0 auto;
+    width: 70%;
+    height: auto;
+  }
+}
+.content__search-room {
+  width: 85%;
+}
+.content__text {
+  color: #1F2041;
+  font-family: "Montserrat-bold", sans-serif;
+  font-style: normal;
+  font-size: 24px;
+  color: Dark 100%;
+  padding-top: 16px;
+}
+.content__form {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 0;
+}
+.content #img-form {
+  background-image: url(f1d0b03ffb3ec3dc0ed836dc0d75ed72.svg);
+}
+.content__container-arrivel {
+  width: 40%;
+  margin-right: 45px;
+}
+@media (max-width: 444px) {
+  .content__container-arrivel {
+    width: 100%;
+    margin: 0;
+  }
+}
+.content__button-title-arrivel {
+  text-transform: uppercase;
+  font-family: "Montserrat-Regular", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  color: Dark 100%;
+}
+.content .content__button-arrivel {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 40px;
+  padding: 0 0 0 15px;
+  color: #5a5854;
+  /*Цвет текста формы*/
+  background-color: #ffffff;
+  /*Цвет формы*/
+  border: 1px solid #bdbdbd;
+  /*Граница формы*/
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  /*Отменяет повтор вставленной картинки (значение по умолчанию) */
+  background-position: 90% 50%;
+  /*Местоположение вставленной картинки*/
+  font-family: "Montserrat-Regular", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+}
+@media (max-width: 444px) {
+  .content .content__button-arrivel {
+    width: 93%;
+  }
+}
+.content input[type=date]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+.content input:focus, .content input:hover {
+  background-color: #f2f2f2;
+  border: 1px solid #b1e1e4;
+}
+.content select:focus, .content select:hover {
+  background-color: #f2f2f2;
+  border: 1px solid #b1e1e4;
+}
+.content__container-departure {
+  width: 40%;
+}
+@media (max-width: 444px) {
+  .content__container-departure {
+    width: 100%;
+  }
+}
+.content__button-title-departure {
+  text-transform: uppercase;
+  font-family: "Montserrat-Regular", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  color: Dark 100%;
+}
+.content__button-departure {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 40px;
+  padding: 0 0 0 15px;
+  color: #5a5854;
+  /*Цвет текста формы*/
+  background-color: #ffffff;
+  /*Цвет формы*/
+  border: 1px solid #bdbdbd;
+  /*Граница формы*/
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  /*Отменяет повтор вставленной картинки (значение по умолчанию)*/
+  background-position: 90% 50%;
+  /*Местоположение вставленной картинки*/
+  font-family: "Montserrat-Regular", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+}
+@media (max-width: 444px) {
+  .content__button-departure {
+    width: 93%;
+  }
+}
+.content__container-guests {
+  width: 100%;
+}
+.content__button-title-guests {
+  text-transform: uppercase;
+  font-family: "Montserrat-Regular", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  color: Dark 100%;
+}
+.content__button-guests {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 40px;
+  padding: 0 0 0 15px;
+  color: #5a5854;
+  /*Цвет текста формы*/
+  background-color: #ffffff;
+  /*Цвет формы*/
+  border: 1px solid #bdbdbd;
+  /*Граница формы*/
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+  font-family: "Montserrat-Regular", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+}
+.content select::-ms-expand {
+  display: none;
+}
+.content__button-pick-up-number {
+  margin-top: 20px;
+  width: 100%;
+  height: 43px;
+  border: none;
+  /*Граница кнопки*/
+  border-radius: 21px;
+  /*Радиус скругления краев формы*/
+  background-color: #b9e4e3;
+  /*Цвет кнопки*/
+  background: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
+  /*Линейный гардиент у кнопки*/
+  background: -moz-linear-gradient(top, #BC9CFF, #8BA4F9);
+  background: -o-linear-gradient(top, #BC9CFF, #8BA4F9);
+  background: -ms-linear-gradient(top, #BC9CFF, #8BA4F9);
+}
+@media (max-width: 444px) {
+  .content__button-pick-up-number {
+    margin-bottom: 40px;
+  }
+}
+.content__button-text {
+  margin: 0 0 0 25%;
+  display: inline-block;
+  vertical-align: middle;
+  text-transform: uppercase;
+  font-family: "Montserrat-bold", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  color: #fff;
+  /*Цвет текста формы*/
+}
+@media (max-width: 444px) {
+  .content__button-text {
+    margin: 0 0 0 0;
+  }
+}
+.content img.content__button-img {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 0 20%;
+}
+@media (max-width: 444px) {
+  .content img.content__button-img {
+    margin: 0 0 0 5%;
+  }
 }
 
 .footer {
-  /* .footer__container================Ограничивающий контейнер + отступы безопасности */
-  /* .footer__top================================================Верхняя часть подвала */
-  /* .footer__logo=====================================================Блок с логотипом */
-  /* .footer__logo-img */
+  /*.footer__container================Ограничивающий контейнер + отступы безопасности*/
+  /*.footer__top================================================Верхняя часть подвала*/
+  /*.footer__logo==================================================Блок с логотипом*/
+  /*.footer__logo-img*/
   /* .footer__logo-link */
-  /* .footer__text */
-  /* .footer__navigation==============================================Блок "Навигация" */
-  /* .footer__about-us====================================================Блок "О нас" */
-  /* .footer__support==========================================Блок "Служба поддержки" */
-  /* .footer__subscription=============================================Блок "Подписка" */
-}
-.footer hr {
-  padding: 0;
-  margin: 0;
-  color: #d1d1d4;
+  /*.footer__text*/
+  /*.footer__navigation=======================Позиционирование блока "Навигация"*/
+  /*.footer__about-us============================Позиционирование блока "О нас"*/
+  /*.footer__support===================Позиционирование блока "Служба поддержки"*/
+  /*.footer__subscription=====================Позиционирование блока "Подписка"*/
 }
 .footer__container {
   max-width: 1160px;
   padding: 0 15px;
   margin: 0 auto;
+  display: -ms-flexbox;
 }
 .footer__top {
   margin: auto;
@@ -510,7 +753,7 @@ button.header__registration-button {
   }
 }
 .footer__logo {
-  width: 264px;
+  width: 265px;
   height: 168px;
 }
 @media (max-width: 1188px) {
@@ -527,12 +770,10 @@ button.header__registration-button {
   }
 }
 .footer__logo-img {
-  background-image: url(82b4291f360b79033292d522fd131a55.svg);
-  background-repeat: no-repeat;
-  background-position: left;
   height: 40px;
-  width: 106px;
+  width: 108px;
   margin: 0 0 2px 0;
+  border: none;
 }
 .footer__text {
   text-decoration: none;
@@ -653,11 +894,12 @@ button.header__registration-button {
   }
 }
 
+/*navigation==================================================Блок "Навигация"*/
 .navigation {
-  /* .navigation__list */
-  /* .navigation__item-title */
-  /* .navigation__item */
-  /* .navigation__link */
+  /*.navigation__list*/
+  /*.navigation__item-title*/
+  /*.navigation__item*/
+  /*.navigation__link*/
 }
 .navigation__list {
   margin: 0;
@@ -687,11 +929,12 @@ button.header__registration-button {
   color: rgba(31, 32, 65, 0.5);
 }
 
+/*about-us====================================================Блок "О нас"*/
 .about-us {
-  /* .about-us__list */
-  /* .about-us__item-title */
-  /* .about-us__item */
-  /* .about-us__link */
+  /*.about-us__list*/
+  /*.about-us__item-title*/
+  /*.about-us__item*/
+  /*.about-us__link*/
 }
 .about-us__list {
   margin: 0;
@@ -721,11 +964,12 @@ button.header__registration-button {
   color: rgba(31, 32, 65, 0.5);
 }
 
+/*support====================================================Блок "Поддержка"*/
 .support {
-  /* .support__list */
-  /* .support__item-title */
-  /* .support__item */
-  /* .support__link */
+  /*.support__list*/
+  /*.support__item-title*/
+  /*.support__item*/
+  /*.support__link*/
 }
 .support__list {
   margin: 0;
@@ -755,10 +999,11 @@ button.header__registration-button {
   color: rgba(31, 32, 65, 0.5);
 }
 
+/*subscription====================================================Блок "Подписка"*/
 .subscription {
-  /* .subscription__title */
-  /* .subscription__text */
-  /* .subscription__form-email */
+  /*.subscription__title*/
+  /*.subscription__text*/
+  /*.subscription__form-email*/
 }
 .subscription__title {
   list-style-type: none;
@@ -815,18 +1060,23 @@ button.header__registration-button {
   height: 1px;
   background: rgba(31, 32, 65, 0.5);
 }
+
+.line__bottom {
+  height: 1px;
+  background: rgba(31, 32, 65, 0.5);
+}
 @media (max-width: 1188px) {
-  .line {
+  .line__bottom {
     margin-top: 25px;
   }
 }
 
 .footer {
-  /* .footer__bottom==============================================Нижняя часть подвала */
-  /* .footer__copyright=======================================================Копирайт */
-  /* .footer__social-network===========================================Иконки соцсетей */
-  /* .footer__copyright */
-  /* .footer__text-copyright */
+  /*.footer__bottom==========================================Нижняя часть подвала*/
+  /*.footer__copyright===================================================Копирайт*/
+  /*.footer__social-network=======================================Иконки соцсетей*/
+  /*.footer__copyright*/
+  /*.footer__text-copyright*/
 }
 .footer__bottom {
   display: flex;
@@ -857,12 +1107,12 @@ button.header__registration-button {
 }
 
 .social-network {
-  /* .social-network__twitter-link */
-  /* .social-network__twitter-icon */
-  /* .social-network__facebook-link */
-  /* .social-network__facebook-icon */
-  /* .social-network__instagram-link */
-  /* .social-network__instagram-icon */
+  /*.social-network__twitter-link*/
+  /*.social-network__twitter-icon*/
+  /*.social-network__facebook-link*/
+  /*.social-network__facebook-icon*/
+  /*.social-network__instagram-link*/
+  /*.social-network__instagram-icon*/
 }
 .social-network__twitter-icon {
   background-image: url(e83d081c355f3bfa3013fe0914697e01.svg);

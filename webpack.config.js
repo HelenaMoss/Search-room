@@ -35,7 +35,7 @@ module.exports = {
 
 		{
   	    test: /\.(png|jpg|svg|tiff|gif)$/,
-  	    use: ['file-loader']
+  	    use: ['file-loader'],
 		},
 
 		{
@@ -59,7 +59,7 @@ plugins: [
 	 	new CopyWebpackPlugin({
 	patterns: [
 		{
-		from: path.resolve(__dirname, 'src/assets/favicon.ico'),
+		from: path.resolve(__dirname, 'src/assets/img/pug'),
 		to: path.resolve(__dirname, 'docs')
 		}
   		]

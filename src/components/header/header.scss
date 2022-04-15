@@ -17,11 +17,12 @@
 //}
 
 
-/* Ограничивающий контейнер + отступы от края страницы при адаптиве*/
+/*Ограничивающий контейнер + отступы от края страницы при адаптиве*/
 .header__container {
 	max-width: $maxWidthContainer; //Параметр позволяет динамически менять ширину контейнера от 0 до 1160px
 	padding: 0 15px; //Добавляются отступы по 15px при уменьшении страницы меньше значения max-width
-	margin: 0 auto; 
+	margin: 0 auto;
+	display: -ms-flexbox;//решение для устранения бага в IE11: неработающий align-items при использовании min-height 
 }
 
 /*Тело шапки*/
@@ -46,12 +47,10 @@
 
 /*Логотип*/
 .header__logo {
-	//background: orange;
-	background-image: url('./assets/img/logo.svg');//Изображение ставиться фоном в блоке
-	background-repeat: no-repeat;
-	background-position: left; 
+	//background: orange; 
 	height: 40px;
-	width: 106px;
+	width: 108px;
+	border: none; //Для IE более ранних версий
    }
 
 /*Меню*/
@@ -320,7 +319,7 @@ button.header__entrance-button {
 	text-decoration: none;
 	font-family: 'Montserrat-Bold', sans-serif;
 	font-style: normal;
-	font-weight: bold;
+	font-weight: normal;
 	font-size: 12px;
 	line-height: 15px;
 	text-transform: uppercase;
@@ -345,7 +344,7 @@ button.header__registration-button {
 	text-decoration: none;
 	font-family: 'Montserrat-Bold', sans-serif;
 	font-style: normal;
-	font-weight: bold;
+	font-weight: normal;
 	font-size: 12px;
 	line-height: 15px;
 	text-transform: uppercase;

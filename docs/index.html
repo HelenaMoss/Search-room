@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search room_the 2nd task MetaLamp</title>
     <link rel="icon" href="favicon.ico" type="image/ico">
-  <script defer src="main.a92d405968eb25f8ab81.js"></script><link href="main.ae5465823b6ae0397dfd.css" rel="stylesheet"></head>
+  <script defer src="main.cc2dbbaa93089b954434.js"></script><link href="main.0c80c665ae0c9424cbe3.css" rel="stylesheet"></head>
   <body>
 <header class="header">
   <!--
@@ -13,8 +13,7 @@
   div.header__wrapper
   -->
   <div class="header__container">
-    <div class="header__body"><a class="header__logo-link" href="https://www.figma.com/proto/MumYcKVk9RkKZEG6dR5E3A/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task?node-id=18374%3A5" target="_blank">
-        <div class="header__logo"></div></a>
+    <div class="header__body"><a class="header__logo-link" href="https://www.figma.com/proto/MumYcKVk9RkKZEG6dR5E3A/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task?node-id=18374%3A5" target="_blank"><img class="header__logo" src="logo.svg"></a>
       <div class="header__menu menu">
         <ul class="menu__list">
           <li class="menu__item menu__item_indent-onas"><a class="menu__link" href="#">О нас</a></li>
@@ -56,12 +55,41 @@
     </div>
   </div>
 </header>
-<div class="content"></div>
+<div class="content">
+  <div class="content__search-room-container search-room-container">
+    <div class="content__search-room">
+      <p class="content__text">Найдём номера под ваши пожелания</p>
+      <form class="content__form" action="#" metod="get">
+        <div class="content__container-arrivel">
+          <p class="content__button-title-arrivel">Прибытие</p>
+          <input class="content__button-arrivel" id="img-form" type="date" name="arrivel" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}" title="ДД.ММ.ГГГГ, например: 02.12.2005">
+        </div>
+        <div class="content__container-departure">
+          <p class="content__button-title-departure">Выезд</p>
+          <input class="content__button-departure" id="img-form" type="date" name="departure" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}" title="ДД.ММ.ГГГГ, например: 02.12.2005">
+        </div>
+        <div class="content__container-guests">
+          <p class="content__button-title-guests">Гости</p>
+          <select class="content__button-guests" id="img-form" name="guests">
+            <option class="content__button-guests-how-many" value="how-many">Сколько гостей</option>
+            <option class="content__button-guests-adults" value="adults">Взрослые</option>
+            <option class="content__button-guests-children" value="children">Дети</option>
+            <option class="content__button-guests-infants" value="infants">Младенцы</option>
+            <option class="content__button-guests-clear" value="clear">Очистить</option>
+          </select>
+        </div>
+        <button class="content__button-pick-up-number" id="img-pick-up-number" type="submit" value="Подобрать номер"> 
+          <p class="content__button-text">Подобрать номер</p><img class="content__button-img" src="arrow_forwardwhite.svg">
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
 <footer class="footer">
+  <div class="line"></div>
   <div class="footer__container">
     <div class="footer__top">
-      <div class="footer__logo"><a class="footer__logo-link" href="https://www.figma.com/proto/MumYcKVk9RkKZEG6dR5E3A/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task?node-id=18374%3A5" target="_blank">
-          <div class="footer__logo-img"></div></a>
+      <div class="footer__logo"><a class="footer__logo-link" href="https://www.figma.com/proto/MumYcKVk9RkKZEG6dR5E3A/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task?node-id=18374%3A5" target="_blank"><img class="footer__logo-img" src="logo.svg"></a>
         <p class="footer__text">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</p>
       </div>
       <div class="footer__navigation navigation">
@@ -99,7 +127,7 @@
       </div>
     </div>
   </div>
-  <div class="line"></div>
+  <div class="line__bottom"></div>
   <div class="footer__container">
     <div class="footer__bottom">
       <div class="footer__copyright">
@@ -119,7 +147,10 @@ ul
 	+pet('cat')
 	+pet('dog')
 	+pet('pig')
+
 -->
+<!--img(src="../src/assets/img/icon_arrow_down.svg")-->
+<!--img(src="../src/assets/webpack-logo.png")-->
   </body>
 </html>
 <!--

@@ -21,9 +21,11 @@ $md4: 479.98;
 //ИМПОРТЫ==================================================================
 @import "fonts.scss";
 @import "icons.scss";
-@import "blocks/header/header.scss";
-@import "blocks/content/content.scss";
-@import "blocks/footer/footer.scss";
+@import "components/header/header.scss";
+@import "components/content/content.scss";
+@import "components/footer/footer.scss";
+//@import "Normaliz.css";
+
 
 
 //ОСНОВНАЯ СЕТКА============================================================

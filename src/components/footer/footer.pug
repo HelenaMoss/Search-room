@@ -1,4 +1,5 @@
 footer.footer
+	div.line
 	//- Ограничивающий контейнер + отступы безопасности
 	div.footer__container
 		//- Верхняя часть подвала 
@@ -7,7 +8,7 @@ footer.footer
 			div.footer__logo
 				//- Логотип
 				a.footer__logo-link(href="https://www.figma.com/proto/MumYcKVk9RkKZEG6dR5E3A/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task?node-id=18374%3A5" target="_blank")
-					div.footer__logo-img
+					img.footer__logo-img(src="logo.svg") 
 				p.footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
 			//- Блок "Навигация"
 			div.footer__navigation.navigation
@@ -49,7 +50,7 @@ footer.footer
 				p.subscription__text Получайте специальные предложения и новости сервиса
 				form.subscription__form(action="#", metod="get") 
 					input.subscription__form-email#img-form(type="text", name="email", placeholder="Email")
-	div.line
+	div.line__bottom
 	//- Ограничивающий контейнер + отступы безопасности
 	div.footer__container
 		//- Нижняя часть подвала
@@ -72,3 +73,6 @@ footer.footer
 		+pet('cat')
 		+pet('dog')
 		+pet('pig')
+
+//img(src="../src/assets/img/icon_arrow_down.svg")
+//img(src="../src/assets/webpack-logo.png")
