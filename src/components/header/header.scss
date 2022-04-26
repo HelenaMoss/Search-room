@@ -1,11 +1,5 @@
 .header {
 	background: #FFF;
-	//position: absolute;
-	//width: 100%;
-	//left: 0;
-	//top: 0;
-}
-
 /*Фиксирование шапки на странице*/
 	//.header__wrapper {
 	//position: fixed;
@@ -15,24 +9,21 @@
 	//top: 0;
 	//z-index: 50;
 //}
-
-
-/*Ограничивающий контейнер + отступы от края страницы при адаптиве*/
-.header__container {
+	/*header__container===========Ограничивающий контейнер + отступы от края страницы при адаптиве*/
+	&__container {
 	max-width: $maxWidthContainer; //Параметр позволяет динамически менять ширину контейнера от 0 до 1160px
 	padding: 0 15px; //Добавляются отступы по 15px при уменьшении страницы меньше значения max-width
 	margin: 0 auto;
 	display: -ms-flexbox;//решение для устранения бага в IE11: неработающий align-items при использовании min-height 
-}
-
-/*Тело шапки*/
-.header__body {
+	}
+	/*header__body=====================================================================Тело шапки*/
+	&__body {
 	//background: yellow;
 	margin: auto; //Центрирование на странице
 	display: flex; //Создание flex-контейнера и выстраивание всех объектов в ряд
-	justify-content: flex-start; //Выравнивание элементов в одной строке по горизонтали по левому краю
+	justify-content: space-between; 
 	padding: 0;
-	min-height: 70px; //Задаётся минимальная высота шапки
+	min-height: 67px; //Задаётся минимальная высота шапки
 	//max-width: $maxWidthContainer; //задается максимальное значение ширины контентной части
 	align-items: center; //Выравнивание объектов по вертикали в однострочном режиме
 	flex: 0 1 1160px; //Адаптивно задаются размеры блока
@@ -42,39 +33,35 @@
 		flex-wrap: wrap; //Включение многострочного режима для flex-контейнера
 		justify-content: space-around; // Элементы равномерно распределяются с одинаковым расстоянием по краям
 		padding-top: 6px; //Отступ сверху, для того чтобы блок с логотипом не прилипал к верхнему краю при адаптиве 
-	} 
-}
-
-/*Логотип*/
-.header__logo {
+		} 
+	}
+	/*header__logo==========================================================================Логотип*/
+	&__logo {
 	//background: orange; 
 	height: 40px;
 	width: 108px;
 	border: none; //Для IE более ранних версий
-   }
-
-/*Меню*/
-.header__menu {
+	}
+	/*header__menu===============================================================================Меню*/
+	&__menu {
 	//background: pink;
 	display: flex;
-	flex: 0 1 725px; //Адаптивно задаются размеры блока Меню
+	flex: 0 25 725px; //Адаптивно задаются размеры блока Меню
 	justify-content: flex-end; //Выравнивание элементов в одной строке по горизонтали по правому краю
 	//Эти правила действуют при ширине экрана меньше 945px
 	@media (max-width: 945px) {
 		display: flex;
-		flex: 0 1 945px; //Адаптивно задаются размеры блока Меню
+		flex: 0 1 945px; //Адаптивно задаются размеры блока меню
 		flex-wrap: wrap;
 		justify-content: center;
-		order: 1; //Изменение порядка расположения блока во flex-контейнере
+		order: 1; //Изменение порядка расположения блока во flex-контейнере при адаптиве
 		margin-bottom: 8px; //Отступ снизу для разделов меню, когда элементы располагаются в несколько строк
 		margin-top: 5px; //Отступ сверху для разделов меню, когда элементы располагаются в несколько строк
-	} 
-}
-
-.menu {}
-
-/*Блок с элементами меню*/
-.menu__list {
+		} 
+	}
+.menu {
+	/*menu__list==================================================================Блок с элементами меню*/
+	&__list {
 	//background: lightblue;	
 	margin: 0;
 	padding: 0;
@@ -83,8 +70,8 @@
 	justify-content: center;	
 	}
 
-/* Элементы меню: текcт+стрелки*/
-.menu__item {
+	/*menu__item============================================================Элементы меню: текcт+стрелки*/
+	&__item {
 	//background: orange;
 	display: flex; //Поставить элементы меню в ряд c кнопками в виде стрелок
 	align-items: center;
@@ -111,32 +98,12 @@
 			.menu__arrow,
 			.menu__link {
 				color: $GreenColor;
+				}
 			}
 		}
 	}
-	/*
-	//Определение правил поведения для элементов при ширине экрана меньше 768px
-	@media (max-width: $md3+px) {
-		&._hover {
-			.menu__sub-list {
-				opacity: 1;
-				visibility: visible;
-				pointer-events: auto;
-			}
-			.menu__arrow {
-				padding: 0 6px 0 0; //Отступ слева от стрелки задются padding-right так как стрелка перевернется на 180 градусов
-				transform: rotate(-180deg); //Поворот стрелки на 180 градусов
-			}
-			.menu__arrow,
-			.menu__link {
-				color: $GreenColor;
-			}
-		}
-	} */
-}
-
-/*Текстовые ссылки в меню*/
-.menu__link {
+	/*menu__link==================================================================Текстовые ссылки в меню*/
+	&__link {
 	text-decoration: none;
 	font-family: 'Montserrat-Regular', sans-serif;
 	font-style: normal;
@@ -145,10 +112,9 @@
 	line-height: 17px;
 	color: $DarkColortwo; //Dark 50%
 	transition: color 1s ease 0s; //Подсвечмвание элементов меню при раскрытии выпадающего списка
-}
-
-/*Стрелка возле текстовых ссылок в меню*/
-.menu__arrow {
+	}
+	/*menu__arrow======================================================Стрелка возле текстовых ссылок в меню*/
+	&__arrow {
 	margin: 0 0 0 0;
 	padding: 0 0 0 6px; //Отступ слева между стрелкой и текстовым элементом
 	transition: all 0.3s ease 0s;
@@ -156,69 +122,61 @@
 	border: none; //Отмена обводки кнопки по умолчанию 
 	background: none; //Отмена обводки кнопки по умолчанию
 	color: $DarkColortwo; //Dark 50%
-}
-	
-/* Настраиваем отступ слева у раздела меню "О нас"*/
-.menu__item_menu__item_indent-onas { //Переопределение отступа слева у раздела "О нас"
+	}
+	/* menu__item_menu__item_indent-onas=========================Настраиваем отступ слева у раздела меню "О нас"*/
+	&__item_menu__item_indent-onas { //Переопределение отступа слева у раздела "О нас"
 	margin-left: 20.7px;
 	//Определение правил поведения для элементов при ширине экрана меньше 768px
-		@media (max-width: $md3+px) {
+	@media (max-width: $md3+px) {
 		margin-left: 0;
+		}
 	}
-}
-
-/*Обертка для раздела меню "Услуги"*/ 
-.menu__item_indent-uslugi {
+	/*menu__item_indent-uslugi================================================Обертка для раздела меню "Услуги"*/ 
+	&__item_indent-uslugi {
 	//background:lightyellow;
 	width: 89px;
 	display: flex;
 	justify-content: flex-end;
-}
-
-/*Обертка для раздела меню "Вакансии"*/
-.menu__item_indent-vakancii {
+	}
+	/*menu__item_indent-vakancii===============================================Обертка для раздела меню "Вакансии"*/
+	&__item_indent-vakancii {
 	//background: yellow;
 	width: 96px;
 	display: flex;
 	justify-content: flex-end;
-		//Определение правил поведения для элементов при ширине экрана меньше 256px
-		@media (max-width: 256px) {
+	//Определение правил поведения для элементов при ширине экрана меньше 256px
+	@media (max-width: 256px) {
 		justify-content: center;
 		}
-}
-
-/*Обертка для раздела меню "Новости"*/
-.menu__item_indent-novosti {
+	}
+	/*menu__item_indent-novosti====================================================Обертка для раздела меню "Новости"*/
+	&__item_indent-novosti {
 	//background: lightyellow;
 	width: 82px;
 	display: flex;
 	justify-content: flex-end;
 	//Определение правил поведения для элементов при ширине экрана меньше 338px
 	@media (max-width: 338px) {
-	justify-content: center;
+		justify-content: center;
+		}
 	}
-}
-
-/*Обертка для раздела меню "Соглашения"*/
-.menu__item_indent-soglashenia {
+	/*menu__item_indent-soglashenia================================================Обертка для раздела меню "Соглашения"*/
+	&__item_indent-soglashenia {
 	//background: yellow;
 	width: 131px;
 	display: flex;
 	justify-content: flex-end;
 	//Определение правил поведения для элементов при ширине экрана меньше 469px
 	@media (max-width: 469px) {
-	justify-content: center;
-	}
+		justify-content: center;
+		}
 	//Определение правил поведения для элементов при ширине экрана меньше 254px
 	@media (max-width: 254px) {
-	justify-content: center;
+		justify-content: center;
+		}
 	}
-}
-
-._icon-arrow_down {}
-
-/*Выпадающее меню*/
-.menu__sub-list {
+	/*menu__sub-list========================================================================================Выпадающее меню*/
+	&__sub-list {
 	position: relative;
 	background-color: lightgrey;
 	padding: 15px;
@@ -245,18 +203,16 @@
 		position: absolute;
 		top: 100%;
 		left: 0;
-	} 
-}
-
-/*Элементы выпадающего меню*/
-.menu__sub-item {
+		} 
+	}
+	/*menu__sub-item================================================Элементы выпадающего меню*/
+	&__sub-item {
 	&:not(:last-child) {
 		margin: 0 0 3px 0; //Задается отступ снизу всем элементам, кроме последнего
+		}
 	}
-}
-
-/*Ссылки в выпадающем меню*/
-.menu__sub-link {
+	/*menu__sub-link====================================================Ссылки в выпадающем меню*/
+	&__sub-link {
 	text-decoration: none;
 	color: $DarkColortwo; //Dark 50%
 	font-family: 'Montserrat-Regular', sans-serif;
@@ -264,18 +220,13 @@
 	font-weight: normal;
 	font-size: 14px;
 	line-height: 17px; 
+	}
 }
-
-/*Меню-бургер*/
-.icon-menu {} 
-
 /*Авторизация на сайте*/
 .header__authorization {
 	//background: lightblue;
-	position: relative;
 	display: flex;
 	align-items: center; //Выравнивание блоков по вертикали по центру
-
 	//Эти правила действуют при ширине экрана больше 465px
 	@media (min-width: 465px) {
 	width: 329px;//Создается фиксированная ширина контейнера для предотвращения преждевременного переноса блока на след. строчку при адаптиве. 
@@ -288,12 +239,8 @@
 		width: 100%;
 	}
 }
-
-/*Войти*/
-.header__entrance {}
-
-/*Кнопка "Войти"*/
-button.header__entrance-button {
+	/*button.header__entrance-button===========================================Кнопка "Войти"*/
+	&__entrance-button {
 	border: none; //Отмена обводки кнопки по умолчанию 
 	background: none; //Отмена обводки кнопки по умолчанию
 	background-image: url('./assets/img/entrance-button.svg');
@@ -301,21 +248,19 @@ button.header__entrance-button {
 	background-position: center; 
 	width: 87px;
 	height: 34px;
-	margin-right: 20px;
-	margin-left: 26px;
+	margin: 0 20px 3px 26px;
 	//Эти правила действуют при ширине экрана меньше 465px
 	@media (max-width: 465px) {
-	margin-left: 0;
-	}
+		margin-left: 0;
+		}
 	//Эти правила действуют при ширине экрана меньше 332px
-		@media (max-width: 332px) {
+	@media (max-width: 332px) {
 		margin-bottom: 10px;
 		margin-left: 20px;
+		}
 	}
-}
-
-/*Ссылка в кнопке "Войти"*/
-.header__entrance-link {
+	/*header__entrance-link==========================================Ссылка в кнопке "Войти"*/
+	&__entrance-link {
 	text-decoration: none;
 	font-family: 'Montserrat-Bold', sans-serif;
 	font-style: normal;
@@ -324,23 +269,19 @@ button.header__entrance-button {
 	line-height: 15px;
 	text-transform: uppercase;
 	color: $PurpleColor; //Фиолетовый цвет	
-}
-
-/*Регистрация*/
-.header__registration {}
-
-/*Кнопка "Регистрация"*/
-button.header__registration-button {
+	}
+	/*button.header__registration-button==================================Кнопка "Регистрация"*/
+	&__registration-button {
 	border: none;
 	background: none;
 	background-image: url('./assets/img/registration-button.svg');
 	background-repeat: no-repeat;
 	width: 196px;
 	height: 34px;
-}
-
-/*Ссылка в кнопке "Регистрация"*/
-.header__registration-link {
+	margin: 0 0 3px 1px;
+	}
+	/*header__registration-link======================================Ссылка в кнопке "Регистрация"*/
+	&__registration-link {
 	text-decoration: none;
 	font-family: 'Montserrat-Bold', sans-serif;
 	font-style: normal;
@@ -349,4 +290,5 @@ button.header__registration-button {
 	line-height: 15px;
 	text-transform: uppercase;
 	color: $WhiteColor; //Dark 50%
+	}
 }

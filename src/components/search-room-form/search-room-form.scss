@@ -1,0 +1,243 @@
+.search-room-form {
+    background: white;
+	width: 380px;
+	height: 374px;
+	display: flex;
+	justify-content: center;
+	padding: 0 0 0 0;
+	margin: 0 0 23.5% 7.1%;
+	//Эти правила действуют при ширине экрана меньше 444px
+	@media (max-width: 444px) {
+		margin: 0 auto 10%;
+		width: 70%;
+		height: auto;
+		} 
+	/*.content__search-room==============================================Блок поиска номеров*/
+	&__search-room {
+	//background: yellow;
+		width: 84%;
+	}
+	/*.content__text===============================Текст "Найдем номера под ваши пожелания"*/
+	&__text {
+	//background: pink;	
+	color: #1F2041;
+	font-family: 'Montserrat-bold', sans-serif;
+	font-style: normal;
+	font-size: 24px;
+	color: Dark 100%;
+	padding: 0 0 0 0;
+	margin: 40px 0 12px 0;
+	}
+	/*.content__form====================================================Форма поиска номеров*/
+	&__form {
+	//background: lightskyblue;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	margin: 0;  
+	}
+	/*Вставка картинки в элементы формы "Прибытие", "Выезд", "Гости"*/
+	#img-form{
+	background-image: url('./assets/img/icon_arrow_down.svg');
+	}
+	/*.content__container-arrivel=====================Контейнер для элемента формы "Прибытие"*/
+	&__container-arrivel{
+	//background: pink;
+	width: 43%;
+	margin-right: 34px;
+	//Эти правила действуют при ширине экрана меньше 444px
+	@media (max-width: 444px) {
+		width: 100%;
+		margin: 0;
+		} 
+	}
+	/*.content__button-title-arrivel=====================Заголовок элемента формы "Прибытие"*/
+	&__button-title-arrivel {
+	//background: yellow;
+	text-transform: uppercase; //Текст заглавными буквами
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 11.7px;
+	color: Dark 100%;
+	padding: 0;
+	margin-bottom: 4px;
+	}
+	/*.content__button-arrivel======================================Элемент формы "Прибытие"*/
+	&__button-arrivel {
+	-webkit-appearance: none;//Убираем встроенную стрелку
+	-moz-appearance: none;//Убираем встроенную стрелку
+ 	appearance: none;//Убираем встроенную стрелку
+	width: 100%;
+	height: 38px;
+	padding: 0 0 4px 12px;
+	color: #5a5854; //Цвет текста формы
+	background-color: #ffffff; //Цвет формы
+	border: 1px solid #bdbdbd; //Граница формы
+	border-radius: 5px;
+	background-repeat: no-repeat; //Отменяет повтор вставленной картинки (значение по умолчанию)
+	background-position: 90% 50%; //Местоположение вставленной картинки
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	//Эти правила действуют при ширине экрана меньше 444px
+	@media (max-width: 444px) {
+		width: 93%;
+		}
+	}
+	input[type=date]::-webkit-calendar-picker-indicator {//Скрываем значок календаря в Chrome
+  	opacity: 0;
+	}
+	input:focus, input:hover { //Используется для изменения цвета фона введенного текста (focus); Применяет стили при наведении указателя мыши (hover) 
+		background-color: #f2f2f2; // Цвет формы
+		border: 1px solid #b1e1e4; // Граница формы
+	}
+	select:focus, select:hover { //Используется для изменения цвета фона введенного текста (focus); Применяет стили при наведении указателя мыши (hover) 
+		background-color: #f2f2f2; //Цвет формы
+		border: 1px solid #b1e1e4; //Граница формы
+	}
+	/*.content__container-departure====================Контейнер для элемента формы "Выезд"*/
+	&__container-departure{
+	//background: pink;
+	width: 42%;
+	//Эти правила действуют при ширине экрана меньше 444px
+	@media (max-width: 444px) {
+		width: 100%;
+		}
+	}
+	/*.content__button-title-departure=====================Заголовок элемента формы "Выезд"*/
+	&__button-title-departure {
+	//background: yellow;
+	text-transform: uppercase; //Текст заглавными буквами
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 11.7px;
+	color: Dark 100%;
+	padding: 0;
+	margin-bottom: 4px;
+	}
+	/*.content__button-departure=======================================Элемент формы "Выезд"*/
+	&__button-departure {
+	-webkit-appearance: none;//Убираем встроенную стрелку в Chrome
+	-moz-appearance: none;//Убираем встроенную стрелку в MozillaFirefox
+ 	appearance: none;//Убираем встроенную стрелку в IE
+	width: 100%;
+	height: 38px;
+	padding: 0 0 4px 12px;
+	color: #5a5854; //Цвет текста формы
+	background-color: #ffffff; //Цвет формы
+	border: 1px solid #bdbdbd; //Граница формы
+	border-radius: 5px;
+	background-repeat: no-repeat; //Отменяет повтор вставленной картинки (значение по умолчанию)
+	background-position: 90% 50%; //Местоположение вставленной картинки
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	//Эти правила действуют при ширине экрана меньше 444px
+	@media (max-width: 444px) {
+		width: 93%;
+		}
+	}
+	/*.content__container-guests=======================Контейнер для элемента формы "Гости"*/
+	&__container-guests{
+	//background: pink;
+	width: 100%;
+	margin-top: 9px;
+	}
+	/*.content__button-title-guests========================Заголовок элемента формы "Гости"*/
+	&__button-title-guests {
+	//background: yellow;
+	text-transform: uppercase; //Текст заглавными буквами
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 11.7px;
+	color: Dark 100%;
+	margin-bottom: 5px;
+	}
+	/*.content__button-guests=========================================Элемент формы "Гости"*/
+	&__button-guests {
+	-webkit-appearance: none;//Убираем встроенную стрелку в Chrome
+	-moz-appearance: none;//Убираем встроенную стрелку в MozillaFirefox
+ 	appearance: none;//Убираем встроенную стрелку в IE
+ 	width: 100%;
+	height: 45px;
+	padding: 0 0 0 11px;
+	color: #5a5854; //Цвет текста формы
+	background-color: #ffffff; //Цвет формы
+	border: 1px solid #bdbdbd; //Граница формы
+	border-radius: 5px;
+	background-repeat: no-repeat; //Отменяет повтор вставленной картинки (значение по умолчанию)
+	background-position: 95% 50%; //Местоположение вставленной картинки
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	}
+	select::-ms-expand {//Скрываем стрелку справа в IE
+    display: none;
+}
+	/*.content__button-guests-how-many*/
+	&__button-guests-how-many {
+	}
+	/*.content__button-guests-adults*/
+	&__button-guests-adults {
+	}
+	/*.content__button-guests-children*/
+	&__button-guests-children {
+	}
+	/*.content__button-guests-infants*/
+	&__button-guests-infants {
+	}
+	/*.content__button-guests-clear*/
+	&__button-guests-clear {
+	}
+	/*.content__button-pick-up-number=================================Кнопка подтверждения*/
+	&__button-pick-up-number {
+	margin-top: 31px;
+	width: 100%;
+	height: 44px;
+	border: none; //Граница кнопки
+	border-radius: 27px; //Радиус скругления краев формы
+	background-color: #b9e4e3; //Цвет кнопки
+	background: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9)); /*Линейный гардиент у кнопки*/
+	background: -moz-linear-gradient(top, #BC9CFF, #8BA4F9);
+	background: -o-linear-gradient(top, #BC9CFF, #8BA4F9);
+	background: -ms-linear-gradient(top, #BC9CFF, #8BA4F9);
+	//Эти правила действуют при ширине экрана меньше 444px
+	@media (max-width: 444px) {
+		margin-bottom: 42px;
+		} 
+	}
+	/*.content__button-text==================================Текст в кнопке подтверждения*/
+	&__button-text{
+	//background: yellow;
+	margin: 0 0 0 25%;
+	display: inline-block;
+	vertical-align: middle;
+	text-transform: uppercase; //Текст заглавными буквами
+	font-family: 'Montserrat-bold', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	color: #fff; //Цвет текста формы
+	//Эти правила действуют при ширине экрана меньше 444px
+	@media (max-width: 444px) {
+	margin: 0 0 0 0;
+		} 
+	}
+	/*.content__button-img=============================Изображение в кнопке подтверждения*/
+	img.search-room-form__button-img{
+	//background: yellow;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 0 0 20%;
+	//Эти правила действуют при ширине экрана меньше 444px
+	@media (max-width: 444px) {
+		margin: 0 0 0 5%;
+		} 
+	}
+}
