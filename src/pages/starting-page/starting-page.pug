@@ -1,0 +1,47 @@
+include ../../components/logo/logo.pug
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    //- Задается параметр "Ширина сайта равна 100% от заданных в коде параметров"
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Search room_the 2nd task MetaLamp
+    link(rel="icon", href="favicon.ico", type="image/ico")
+  body
+    //- Общая оболочка
+    div.starting-page
+      //- Оболочка для блока с логотипом
+      div.starting-page__logo
+        //- Логотип
+        a.starting-page__logo-link(href="https://www.figma.com/proto/MumYcKVk9RkKZEG6dR5E3A/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task?node-id=18374%3A5" target="_blank")
+          +logo('logo','starting-page__logo-img')  
+      //- Блок "ui-kit"
+      div.starting-page__ui-kitandpages-container
+        div.starting-page__ui-kit
+          ul.starting-page__list
+            li.starting-page__item
+              p.starting-page__title Ui Kit
+            li.starting-page__item
+              a.starting-page__link(href="ui-kit-colors-type.html") Colors & Types
+            li.starting-page__item
+              a.starting-page__link(href="ui-kit-headers-footers.html") Headers & Footers
+            li.starting-page__item
+              a.starting-page__link(href="ui-kit-form-elements.html") Form & Elements
+            li.starting-page__item
+              a.starting-page__link(href="ui-kit-cards.html") Cards
+        //- Блок "pages"
+        div.starting-page__pages
+          ul.starting-page__list
+            li.starting-page__item
+              p.starting-page__title Pages
+            li.starting-page__item
+              a.starting-page__link(href="landing-page.html") Landing page
+            li.starting-page__item
+              a.starting-page__link(href="#") Registration page
+            li.starting-page__item
+              a.starting-page__link(href="#") Sign in page
+            li.starting-page__item
+              a.starting-page__link(href="#") Search room
+            li.starting-page__item
+              a.starting-page__link(href="#") Room details

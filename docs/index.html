@@ -5,185 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search room_the 2nd task MetaLamp</title>
     <link rel="icon" href="favicon.ico" type="image/ico">
-  <script defer src="main.63f743d8edcbea407c98.js"></script><link href="main.d19937b4d028200fc6de.css" rel="stylesheet"></head>
+  <script defer src="main.065ef8802ac05d4b4aa0.js"></script><link href="main.53668189e684ff2d0fc8.css" rel="stylesheet"></head>
   <body>
-<header class="header">
-  <!--
-  //- Оболочка шапки_нужна для фиксирования шапки на странице 
-  div.header__wrapper
-  -->
-  <div class="header__container">
-    <div class="header__body"><a class="header__logo-link" href="https://www.figma.com/proto/MumYcKVk9RkKZEG6dR5E3A/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task?node-id=18374%3A5" target="_blank"><img class="header__logo" src="logo.svg"></a>
-      <div class="header__menu menu">
-        <ul class="menu__list">
-          <li class="menu__item menu__item_indent-onas"><a class="menu__link" href="#">О нас</a></li>
-          <li class="menu__item menu__item_indent-uslugi"><a class="menu__link" href="#">Услуги</a>
-            <button class="menu__arrow _icon-arrow_down" data-spoller type="button"></button>
-            <ul class="menu__sub-list">
-              <li class="menu__sub-item"><a class="menu__sub-link" href="#">Услуга 1</a></li>
-              <li class="menu__sub-item"><a class="menu__sub-link" href="#">Услуга 2</a></li>
-              <li class="menu__sub-item"><a class="menu__sub-link" href="#">Услуга 3</a></li>
-            </ul>
-          </li>
-          <li class="menu__item menu__item_indent-vakancii"><a class="menu__link" href="#">Вакансии</a></li>
-          <li class="menu__item menu__item_indent-novosti"><a class="menu__link" href="#">Новости</a></li>
-          <li class="menu__item menu__item_indent-soglashenia"><a class="menu__link" href="#">Соглашения</a>
-            <button class="menu__arrow _icon-arrow_down" data-spoller type="button"></button>
-            <ul class="menu__sub-list">
-              <li class="menu__sub-item"><a class="menu__sub-link" href="#">Соглашение 1</a></li>
-              <li class="menu__sub-item"><a class="menu__sub-link" href="#">Соглашение 2</a></li>
-              <li class="menu__sub-item"><a class="menu__sub-link" href="#">Соглашение 3</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <!-- button.icon-menu(type="button")
-      span О нас
-      span Услуги
-      span Вакансии
-      span Новости
-      span Соглашения 
-      -->
-      <div class="header__authorization">
-        <div class="header__entrance">
-          <button class="header__entrance-button"><a class="header__entrance-link" href="#">Войти</a></button>
+    <div class="starting-page">
+      <div class="starting-page__logo"><a class="starting-page__logo-link" href="https://www.figma.com/proto/MumYcKVk9RkKZEG6dR5E3A/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task?node-id=18374%3A5" target="_blank"><img class="starting-page__logo-img" src="logo.svg" alt="logo"></a></div>
+      <div class="starting-page__ui-kitandpages-container">
+        <div class="starting-page__ui-kit">
+          <ul class="starting-page__list">
+            <li class="starting-page__item">
+              <p class="starting-page__title">Ui Kit</p>
+            </li>
+            <li class="starting-page__item"><a class="starting-page__link" href="ui-kit-colors-type.html">Colors & Types</a></li>
+            <li class="starting-page__item"><a class="starting-page__link" href="ui-kit-headers-footers.html">Headers & Footers</a></li>
+            <li class="starting-page__item"><a class="starting-page__link" href="ui-kit-form-elements.html">Form & Elements</a></li>
+            <li class="starting-page__item"><a class="starting-page__link" href="ui-kit-cards.html">Cards</a></li>
+          </ul>
         </div>
-        <div class="header__registration">
-          <button class="header__registration-button"><a class="header__registration-link" href="#">Зарегистрироваться</a></button>
+        <div class="starting-page__pages">
+          <ul class="starting-page__list">
+            <li class="starting-page__item">
+              <p class="starting-page__title">Pages</p>
+            </li>
+            <li class="starting-page__item"><a class="starting-page__link" href="landing-page.html">Landing page</a></li>
+            <li class="starting-page__item"><a class="starting-page__link" href="#">Registration page</a></li>
+            <li class="starting-page__item"><a class="starting-page__link" href="#">Sign in page</a></li>
+            <li class="starting-page__item"><a class="starting-page__link" href="#">Search room</a></li>
+            <li class="starting-page__item"><a class="starting-page__link" href="#">Room details</a></li>
+          </ul>
         </div>
       </div>
     </div>
-  </div>
-</header>
-<div class="content">
-<div class="search-room-form">
-  <div class="search-room-form__search-room">
-    <p class="search-room-form__text">Найдём номера под ваши пожелания</p>
-    <form class="search-room-form__form" action="#" metod="get">
-      <div class="search-room-form__container-arrivel">
-        <p class="search-room-form__button-title-arrivel">Прибытие</p>
-        <input class="search-room-form__button-arrivel" id="img-form" type="date" name="arrivel" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}" title="ДД.ММ.ГГГГ, например: 02.12.2005">
-      </div>
-      <div class="search-room-form__container-departure">
-        <p class="search-room-form__button-title-departure">Выезд</p>
-        <input class="search-room-form__button-departure" id="img-form" type="date" name="departure" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}" title="ДД.ММ.ГГГГ, например: 02.12.2005">
-      </div>
-      <div class="search-room-form__container-guests">
-        <p class="search-room-form__button-title-guests">Гости</p>
-        <select class="search-room-form__button-guests" id="img-form" name="guests">
-          <option class="search-room-form__button-guests-how-many" value="how-many">Сколько гостей</option>
-          <option class="search-room-form__button-guests-adults" value="adults">Взрослые</option>
-          <option class="search-room-form__button-guests-children" value="children">Дети</option>
-          <option class="search-room-form__button-guests-infants" value="infants">Младенцы</option>
-          <option class="search-room-form__button-guests-clear" value="clear">Очистить</option>
-        </select>
-      </div>
-      <button class="search-room-form__button-pick-up-number" id="img-pick-up-number" type="submit" value="Подобрать номер"> 
-        <p class="search-room-form__button-text">Подобрать номер</p><img class="search-room-form__button-img" src="arrow_forwardwhite.svg">
-      </button>
-    </form>
-  </div>
-</div>
-  <div class="content__wrapper">
-    <p class="content__text">Лучшие номера для вашей работы, отдыха и просто вдохновения</p>
-  </div>
-</div>
-<footer class="footer">
-  <div class="line"></div>
-  <div class="footer__container">
-    <div class="footer__top">
-      <div class="footer__logo"><a class="footer__logo-link" href="https://www.figma.com/proto/MumYcKVk9RkKZEG6dR5E3A/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task?node-id=18374%3A5" target="_blank"><img class="footer__logo-img" src="logo.svg"></a>
-        <p class="footer__text">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</p>
-      </div>
-      <div class="footer__navigation navigation">
-        <ul class="navigation__list">
-          <li class="navigation__item-title">Навигация</li>
-          <li class="navigation__item"><a class="navigation__link" href="#">О нас</a></li>
-          <li class="navigation__item"><a class="navigation__link" href="#">Новости</a></li>
-          <li class="navigation__item"><a class="navigation__link" href="#">Служба поддержки</a></li>
-          <li class="navigation__item"><a class="navigation__link" href="#">Услуги</a></li>
-        </ul>
-      </div>
-      <div class="footer__about-us about-us">
-        <ul class="about-us__list">
-          <li class="about-us__item-title">О нас</li>
-          <li class="about-us__item"><a class="about-us__link" href="#">О сервисе</a></li>
-          <li class="about-us__item"><a class="about-us__link" href="#">Наша команда</a></li>
-          <li class="about-us__item"><a class="about-us__link" href="#">Вакансии</a></li>
-          <li class="about-us__item"><a class="about-us__link" href="#">Инвесторы</a></li>
-        </ul>
-      </div>
-      <div class="footer__support support">
-        <ul class="support__list">
-          <li class="support__item-title">Служба поддержки</li>
-          <li class="support__item"><a class="support__link" href="#">Соглашения</a></li>
-          <li class="support__item"> <a class="support__link" href="#">Сообщества</a></li>
-          <li class="support__item"><a class="support__link" href="#">Связь с нами</a></li>
-        </ul>
-      </div>
-      <div class="footer__subscription subscription">
-        <p class="subscription__title">Подписка</p>
-        <p class="subscription__text">Получайте специальные предложения и новости сервиса</p>
-        <form class="subscription__form" action="#" metod="get"> 
-          <input class="subscription__form-email" id="img-form" type="text" name="email" placeholder="Email">
-        </form>
-      </div>
-    </div>
-  </div>
-  <div class="line__bottom"></div>
-  <div class="footer__container">
-    <div class="footer__bottom">
-      <div class="footer__copyright">
-        <p class="footer__text-copyright">Copyright © 2018 Toxin отель. Все права защищены.</p>
-      </div>
-      <div class="footer__social-network social-network"><a class="social-network__twitter-link" href="#" target="_blank">
-          <div class="social-network__twitter-icon"></div></a><a class="social-network__facebook-link" href="#" target="_blank">
-          <div class="social-network__facebook-icon"></div></a><a class="social-network__instagram-link" href="#" target="_blank">
-          <div class="social-network__instagram-icon"></div></a></div>
-    </div>
-  </div>
-</footer>
-<!--						
-mixin pet(name)
-	li(class= 'pet')= name
-ul
-	+pet('cat')
-	+pet('dog')
-	+pet('pig')
-
--->
-<!--img(src="../src/assets/img/icon_arrow_down.svg")-->
-<!--img(src="../src/assets/webpack-logo.png")-->
   </body>
 </html>
-<!--
-h1._icon-favorite Hello, dear friends!
-	pre.
-		Не убегайте от своей любви…
-		Не разрушайте маленькое счастье,
-		Не говорите тихо: "Уходи",
-		Когда душа разорвана на части.
-
-		Не убегайте от своей любви,
-		Дарите счастье тем, кто рядом с вами.
-		Не позволяйте зависти и лжи
-		Овладевать вдруг вашими сердцами.
-
-		Не убегайте от своей любви!
-		И никогда её не оставляйте!
-		И даже если стерты все следы,
-		Любите, верьте, только не теряйте!
-
-		Не убегайте от своей любви!
-		Сквозь боль и слезы напролом идите!
-		Не говорите тихо: "Уходи",
-		А просто все забудьте и простите.
-
-		Не убегайте от своей любви!
-		Ведь это лучшее, что есть у вас отныне!
-		Храните чувства светлые свои,
-		Хоть это тяжело в жестоком мире.
-
-		Борис Пастернак
-	div.logo
--->

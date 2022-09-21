@@ -1,0 +1,48 @@
+.container-color-type {
+  background-color: white;
+  max-width: 1280px; //Параметр позволяет динамически менять ширину контейнера от 0 до 1160px
+  margin: 63px auto 0 auto; 
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 915px) {
+    width: 90%;
+    flex-wrap: wrap;
+    justify-content: start;
+  }
+  @media (max-width: 877px) {
+  margin-bottom: 70px;
+  }
+@media (max-width: 426px) {
+  margin-bottom: 120px;
+  }
+@media (max-width: 341px){
+  margin-bottom: 160px;
+  }
+@media (max-width: 320px){
+  margin-bottom: 190px;
+  }
+@media (max-width: 280px){
+  margin-bottom: 230px;
+  }
+}
+
+.container-color-type__colors {
+  margin-left: 117px;
+  margin-right: 40px;
+  @media (max-width: 915px) {
+    margin-left: 0;
+  }
+  @media (max-width: 877px) {
+    margin-bottom: 40px;
+  }
+  @media (max-width: 360px) {
+    margin-bottom: 40px;
+    margin-right: 0;
+  }
+}
+
+.container-color-type__type{
+  margin-right: 40px;
+  width: 448px;
+  height: 321px;
+}

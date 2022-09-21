@@ -1,0 +1,12 @@
+- let colors = ['rgba(31, 32, 65, 1)', 'rgba(31, 32, 65, 0.75)', 'rgba(31, 32, 65, 0.5)', 'rgba(31, 32, 65, 0.25)', 'rgba(31, 32, 65, 0.05)', '#BC9CFF', '#6FCF97'];
+- var nameCodeColors = [{nameColors: 'Dark Shade 100%', codeColors: '#1F2041'}, {nameColors: 'Dark Shade 75%', codeColors: '#1F2041'}, {nameColors: 'Dark Shade 50%', codeColors: '#1F2041'}, {nameColors: 'Dark Shade 25%', codeColors: '#1F2041'}, {nameColors: 'Dark Shade 5%', codeColors: '#1F2041'}, {nameColors: 'Purple', codeColors: '#BC9CFF'}, {nameColors: 'Green', codeColors: '#6FCF97'}];
+
+div.container-colors
+  div.colors
+    each valueColors in colors
+      div.color-box(style = { background: valueColors })
+  div.name-code-colors
+    each valueNameCodeColors in nameCodeColors
+      div.name-code-colors-box
+        div.name-code-colors-box__name=valueNameCodeColors.nameColors
+        div.name-code-colors-box__code=valueNameCodeColors.codeColors

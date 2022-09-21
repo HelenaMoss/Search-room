@@ -1,0 +1,10 @@
+.header {
+max-width: 1287px; //Параметр позволяет динамически менять ширину контейнера от 0 до 1287px
+padding: 0 15px; //Добавляются отступы по 15px при уменьшении страницы меньше значения max-width
+margin: 0 auto;
+
+  //header__ui-kit-element-logo==========Логотип
+  &__ui-kit-element-logo{
+  margin-top: 30px;
+  }
+}

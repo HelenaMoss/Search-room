@@ -1,57 +1,57 @@
-/*search-room-container=================================Обертка для Блока поиска номеров*/
+//search-room-container=================================Обертка для Блока поиска номеров
 .content {
-	margin: auto;
-	max-width: 1920px; //Параметр позволяет динамически менять ширину контейнера от 0 до 1160px
-	background: #CC9999;
-	background-image: url('./assets/img/image 3.jpg');
-	padding: 5.25% 0 0 0; 
-	background-size: auto; //Высота и ширина изображения равны его оригинальным размерам
-	background-repeat: no-repeat;
-	background-position: 45% 98%;  //Cмещение изображения в контейнере
-	//Эти правила действуют при ширине экрана меньше 444px
-	@media (max-width: 444px) {
-		padding: 10% 0 0 0;
-		} 
-	//Эти правила действуют при ширине экрана больше 1440px
-	@media (min-width: 1440px) {
-		background-size: 100%; //Высота и ширина изображения равны его оригинальным размерам
-		background-position: center center;  //Cмещение изображения в контейнере
-		}
-	/*content__wrapper=============================================================Текст*/	
-	&__wrapper {
-	//background: green;
-	max-width: 1170px; //Параметр позволяет динамически менять ширину контейнера от 0 до 1160px
-	padding: 0 15px; //Добавляются отступы по 15px при уменьшении страницы меньше значения max-width
-	margin: 0 auto;
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	flex: 0 1 1160px; //Адаптивно задаются размеры блока
-	}
-	/*content__text=============================================================Текст*/
-	&__text {
-	//background: yellow;
-	width: 300px;
-	margin: 0;
-	padding: 0 0 1.7% 0;
-	text-align: right;
-	font-family: 'Montserrat-Regular', sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 24px;
-	color: $DarkColortwo; //Dark 50%
-	} 
+  margin: auto;
+  max-width: 1920px; //Параметр позволяет динамически менять ширину контейнера от 0 до 1160px
+  background: #CC9999;
+  background-image: url('./assets/img/image 3.jpg');
+  padding: 5.25% 0 0 0; 
+  background-size: auto; //Высота и ширина изображения равны его оригинальным размерам
+  background-repeat: no-repeat;
+  background-position: 45% 98%;  //Cмещение изображения в контейнере
+  //Эти правила действуют при ширине экрана меньше 444px
+  @media (max-width: 444px) {
+    padding: 10% 0 0 0;
+    } 
+  //Эти правила действуют при ширине экрана больше 1440px
+  @media (min-width: 1440px) {
+    background-size: 100%; //Высота и ширина изображения равны его оригинальным размерам
+    background-position: center center;  //Cмещение изображения в контейнере
+    }
+  //content__wrapper=============================================================Текст 
+  &__wrapper {
+  //background: green;
+  max-width: 1170px; //Параметр позволяет динамически менять ширину контейнера от 0 до 1160px
+  padding: 0 15px; //Добавляются отступы по 15px при уменьшении страницы меньше значения max-width
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex: 0 1 1160px; //Адаптивно задаются размеры блока
+  }
+  //content__text=============================================================Текст
+  &__text {
+  //background: yellow;
+  width: 300px;
+  margin: 0;
+  padding: 0 0 1.7% 0;
+  text-align: right;
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: $DarkColortwo; //Dark 50%
+  } 
 }
-	//background: #CC9999;
-	//background-image: url('./assets/img/image 3.jpg');
-	//padding-top: 62.5%; // 900px/1440px = 0.625 
-	//background-size: 1440px 900px;
-	//background-position: center center;  // Internet Explorer 7/8 
+  //background: #CC9999;
+  //background-image: url('./assets/img/image 3.jpg');
+  //padding-top: 62.5%; // 900px/1440px = 0.625 
+  //background-size: 1440px 900px;
+  //background-position: center center;  // Internet Explorer 7/8 
 
 
-	//background-size: 100% auto;
-	//background-repeat: no-repeat;
-	//width: 100%;
-	//height: 1200px;
-	//margin: 0 auto 0 auto; // Отступ сверху на высоту фиксированной шапки
+  //background-size: 100% auto;
+  //background-repeat: no-repeat;
+  //width: 100%;
+  //height: 1200px;
+  //margin: 0 auto 0 auto; // Отступ сверху на высоту фиксированной шапки

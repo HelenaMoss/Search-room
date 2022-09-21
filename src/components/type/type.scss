@@ -1,0 +1,98 @@
+.container-type {
+  display: flex;
+}
+.tags {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 30px;
+
+		&__H1 {
+    font-family: 'Montserrat-Regular', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    color: rgba(31, 32, 65, 0.25);
+    margin-bottom: 80px;
+    @media (max-width: 426px){
+      margin-bottom: 112px;
+      }
+    @media (max-width: 320px){
+      margin-bottom: 141px;
+      }
+    @media (max-width: 280px){
+      margin-bottom: 170px;
+      }
+		}
+
+		&__H2 {
+    font-family: 'Montserrat-Regular', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    color: rgba(31, 32, 65, 0.25);
+    margin-bottom: 76px;
+    @media (max-width: 341px){
+      margin-bottom: 97px;
+      }
+		}
+
+		&__H3 {
+    font-family: 'Montserrat-Regular', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(31, 32, 65, 0.25);
+    margin-bottom: 50px;
+    @media (max-width: 324px){
+      margin-bottom: 65px;
+      }
+		}
+
+		&__Body {
+    font-family: 'Montserrat-Regular', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: rgba(31, 32, 65, 0.25);
+		}
+}
+.type {
+
+		&__1 {
+      font-family: 'Montserrat-Bold', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      color: #1F2041;
+      margin-bottom: 52px;
+		}
+
+		&__2 {
+      font-family: 'Montserrat-Bold', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 19px;
+      color: #1F2041;
+      margin-bottom: 52px;  
+		}
+
+		&__3 {
+      font-family: 'Montserrat-Bold', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #1F2041;
+      margin-bottom: 52px; 
+		}
+
+		&__4 {
+      font-family: 'Montserrat-Regular', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 1.5;
+      color: rgba(31, 32, 65, 0.75); 
+		}
+}

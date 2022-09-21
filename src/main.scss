@@ -14,9 +14,9 @@ $maxWidth: 1440px; //максимальное значение ширины ст
 $maxWidthContainer: 1160px; //максимальное значение ширины контентной части 
 $md1: $maxWidthContainer + 12;
 
-$md2: 991.98;
-$md3: 767.98;
-$md4: 479.98;
+$md2: 991.98px;
+$md3: 767.98px;
+$md4: 479.98px;
 
 //ИМПОРТЫ==================================================================
 @import "fonts.scss";
@@ -25,6 +25,12 @@ $md4: 479.98;
 @import "components/content/content.scss";
 @import "components/footer/footer.scss";
 @import "components/search-room-form/search-room-form.scss";
+@import "pages/starting-page/starting-page.scss";
+@import "layouts/layouts.scss";
+@import "components/colors/colors.scss";
+@import "components/type/type.scss";
+@import "pages/ui-kit-colors-type/ui-kit-colors-type.scss";
+//@import "components/text-field/text-field.scss";
 //@import "Normaliz.css";
 
 
@@ -32,36 +38,12 @@ $md4: 479.98;
 //ОСНОВНАЯ СЕТКА============================================================
 
 body {
-	background: #fff; //использование переменной для определения цвета
-	border: 0; /*Обнуление предустановленного в браузере отступа*/
- 	margin: 0; /*Обнуление предустановленного в браузере отступа*/
-  	padding: 0; /*Обнуление предустановленного в браузере отступа*/
-  	//width: 100%;
+  background: #fff; //Использование переменной для определения цвета
+  border: 0; //Обнуление предустановленного в браузере отступа
+  margin: 0; //Обнуление предустановленного в браузере отступа
+  padding: 0; //Обнуление предустановленного в браузере отступа
 }
 
 
-/*
-h1 {
-	font-family: 'Montserrat-Bold', sans-serif;
-	font-size: 18px;
-	
-}
 
-pre {
-	font-family: 'Montserrat-Regular', sans-serif;
-	font-size: $fontsize; //использование переменной для определения размера шрифта
-	position: relative;
-	top: 10px;
-}
-
-.logo {
-	background-image: url('./assets/webpack-logo.png');
-	background-size: cover; 
-	height: 100px;
-	width: 100px;
-	margin-top: 15px;
-	margin-left: 15px;
-	position: relative;
-	top: 10px;
-}*/
 

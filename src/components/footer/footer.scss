@@ -1,419 +1,419 @@
 .footer {
-	/*.footer__container================Ограничивающий контейнер + отступы безопасности*/
-	&__container {
-    //background: purple;
-	max-width: 1170px; //Параметр позволяет динамически менять ширину контейнера от 0 до 1160px
-	padding: 0 15px; //Добавляются отступы по 15px при уменьшении страницы меньше значения max-width
-	margin: 0 auto;
-	display: -ms-flexbox;//решение для устранения бага в IE11: неработающий align-items при использовании min-height 
-	}
-	/*.footer__top================================================Верхняя часть подвала*/
-	&__top {
-	//background: yellow;
-	margin: auto; //Центрирование на странице
-	display: flex; //Создание flex-контейнера и выстраивание всех объектов в ряд
-	justify-content: center; //Выравнивание элементов в одной строке по горизонтали по левому краю
-	padding: 0;
-	align-items: center; //Выравнивание объектов по вертикали в однострочном режиме
-	flex: 0 1 1170px; //Адаптивно задаются размеры блока
-	flex-wrap: wrap;
-	min-height: 374px; //Задаётся минимальная высота подвала
-	//Эти правила действуют при ширине экрана меньше 1198px
-	@media (max-width: 1198px) {
-	justify-content: center;
-	align-content: center;
-	} 
-	//Эти правила действуют при ширине экрана меньше 360px
-	@media (max-width: 360px) {
-		display: flex;
-		flex-wrap: wrap; //Включение многострочного режима для flex-контейнера
-		} 
-	}
-	/*.footer__logo==================================================Блок с логотипом*/
-	&__logo{
-	//background: pink;
-	width: 265px; 
-	height: 168px;
-	//Эти правила действуют при ширине экрана меньше 1198px
-	@media (max-width: 1198px) {
-	margin-top: 30px;
-	} 
-	//Эти правила действуют при ширине экрана меньше 600px
-	@media (max-width: 600px) {
-		width: 90%;
-		height: auto;
-		margin-top: 20px;
-		margin-bottom: 5px;
-		}
-	}
-	/*.footer__logo-img*/
-	&__logo-img {
-	//background: orange; 
-	height: 40px;
-	width: 108px;
-	margin: 0 0 0 9px;
-	border: none; //Для IE более ранних версий
-	}
-	/* .footer__logo-link */
-	&__logo-link {
-	}
-	/*.footer__text*/
-	&__text {
-	text-decoration: none;
-	font-family: 'Montserrat-Regular', sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 24px;
-    margin: 15px 0 0 10px;
-	color: $DarkColortwo; //Dark 50%	
-	}
-	/*.footer__navigation=======================Позиционирование блока "Навигация"*/
-	&__navigation {
-	//background: lightgreen;
-	width: 183px;
-	height: 164px;
-	padding: 0 0 0 44px;
-	//Эти правила действуют при ширине экрана меньше 1198px
-	@media (max-width: 1198px) {
-	margin-top: 40px;
-	} 
-	//Эти правила действуют при ширине экрана меньше 600px
-	@media (max-width: 600px) {
-		margin-top: 20px;
-		margin-left: 0;
-		margin-right: 0;
-		}
-	//Эти правила действуют при ширине экрана меньше 430px
-	@media (max-width: 440px) {
-        height: auto;
-		}  
-	}
-	/*.footer__about-us============================Позиционирование блока "О нас"*/
-	&__about-us {
-	//background: green;
-	width: 166px;
-	height: 170px;
-	padding: 0 0 0 18px;
-	//Эти правила действуют при ширине экрана меньше 1198px
-	@media (max-width: 1198px) {
-	margin-top: 40px;
-	} 
-	//Эти правила действуют при ширине экрана меньше 600px
-	@media (max-width: 600px) {
-		margin-top: 20px;
-		margin-left: 0;
-		margin-right: 0;
-		} 
-    //Эти правила действуют при ширине экрана меньше 430px
-    @media (max-width: 440px) {
-        height: auto;
-        margin-bottom: 15px;
-        }
-    //Эти правила действуют при ширине экрана меньше 422px
-    @media (max-width: 422px) {
-        height: auto;
-        margin-bottom: 0;
-        }     
-	}
-	/*.footer__support===================Позиционирование блока "Служба поддержки"*/
-	&__support {
-	//background: lightpink;
-	width: 175px;
-	height: 162px;
-	padding: 0 0 0 34px;
-	//Эти правила действуют при ширине экрана меньше 1198px
-	@media (max-width: 1198px) {
-	margin-top: 40px;
-	} 
-	//Эти правила действуют при ширине экрана меньше 600px
-	@media (max-width: 600px) {
-		margin-left: 0;
-		margin-right: 0;
-		}
-    //Эти правила действуют при ширине экрана меньше 430px
-    @media (max-width: 440px) {
-        height: auto;
-        margin-bottom: 47px;
-        } 
-     //Эти правила действуют при ширине экрана меньше 422px
-    @media (max-width: 422px) {
-        height: auto;
-        margin-top: 25px;
-        margin-bottom: 25px;
-        }  
-	}
-	/*.footer__subscription=====================Позиционирование блока "Подписка"*/
-	&__subscription {
-	//background: lightsteelblue;
-	width: 260px;
-	height: 164px;
-	padding: 0 0 0 24px;
-	//Эти правила действуют при ширине экрана меньше 1198px
-	@media (max-width: 1198px) {
-	   margin-top: 40px;
-	} 
-	//Эти правила действуют при ширине экрана меньше 600px
-	@media (max-width: 600px) {
-		width: 90%;
-		margin-top: 0;
-		margin-left: 0;
-		margin-right: 0;
-		padding: 0 0 0 0;
-		}
-	
-	}
+  //.footer__container================Ограничивающий контейнер + отступы безопасности
+  &__container {
+  //background: purple;
+  max-width: 1170px; //Параметр позволяет динамически менять ширину контейнера от 0 до 1160px
+  padding: 0 15px; //Добавляются отступы по 15px при уменьшении страницы меньше значения max-width
+  margin: 0 auto;
+  display: -ms-flexbox;//решение для устранения бага в IE11: неработающий align-items при использовании min-height 
+  }
+  //.footer__top================================================Верхняя часть подвала
+  &__top {
+  //background: yellow;
+  margin: auto; //Центрирование на странице
+  display: flex; //Создание flex-контейнера и выстраивание всех объектов в ряд
+  justify-content: center; //Выравнивание элементов в одной строке по горизонтали по левому краю
+  padding: 0;
+  align-items: center; //Выравнивание объектов по вертикали в однострочном режиме
+  flex: 0 1 1170px; //Адаптивно задаются размеры блока
+  flex-wrap: wrap;
+  min-height: 374px; //Задаётся минимальная высота подвала
+  //Эти правила действуют при ширине экрана меньше 1198px
+  @media (max-width: 1198px) {
+  justify-content: center;
+  align-content: center;
+  } 
+  //Эти правила действуют при ширине экрана меньше 360px
+  @media (max-width: 360px) {
+      display: flex;
+      flex-wrap: wrap; //Включение многострочного режима для flex-контейнера
+      } 
+  }
+  //.footer__logo==================================================Блок с логотипом
+  &__logo{
+  //background: pink;
+  width: 265px; 
+  height: 168px;
+  //Эти правила действуют при ширине экрана меньше 1198px
+  @media (max-width: 1198px) {
+  margin-top: 30px;
+  } 
+  //Эти правила действуют при ширине экрана меньше 600px
+  @media (max-width: 600px) {
+      width: 90%;
+      height: auto;
+      margin-top: 20px;
+      margin-bottom: 5px;
+      }
+  }
+  //.footer__logo-img
+  &__logo-img {
+  //background: orange; 
+  height: 40px;
+  width: 108px;
+  margin: 0 0 0 9px;
+  border: none; //Для IE более ранних версий
+  }
+  // .footer__logo-link
+  &__logo-link {
+  }
+  //.footer__text
+  &__text {
+  text-decoration: none;
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 15px 0 0 10px;
+  color: $DarkColortwo; //Dark 50%    
+  }
+  //.footer__navigation=======================Позиционирование блока "Навигация"
+  &__navigation {
+  //background: lightgreen;
+  width: 183px;
+  height: 164px;
+  padding: 0 0 0 44px;
+  //Эти правила действуют при ширине экрана меньше 1198px
+  @media (max-width: 1198px) {
+  margin-top: 40px;
+  } 
+  //Эти правила действуют при ширине экрана меньше 600px
+  @media (max-width: 600px) {
+      margin-top: 20px;
+      margin-left: 0;
+      margin-right: 0;
+      }
+  //Эти правила действуют при ширине экрана меньше 430px
+  @media (max-width: 440px) {
+      height: auto;
+      }  
+  }
+  //.footer__about-us============================Позиционирование блока "О нас"
+  &__about-us {
+  //background: green;
+  width: 166px;
+  height: 170px;
+  padding: 0 0 0 18px;
+  //Эти правила действуют при ширине экрана меньше 1198px
+  @media (max-width: 1198px) {
+  margin-top: 40px;
+  } 
+  //Эти правила действуют при ширине экрана меньше 600px
+  @media (max-width: 600px) {
+      margin-top: 20px;
+      margin-left: 0;
+      margin-right: 0;
+      } 
+  //Эти правила действуют при ширине экрана меньше 430px
+  @media (max-width: 440px) {
+      height: auto;
+      margin-bottom: 15px;
+      }
+  //Эти правила действуют при ширине экрана меньше 422px
+  @media (max-width: 422px) {
+      height: auto;
+      margin-bottom: 0;
+      }     
+  }
+  //.footer__support===================Позиционирование блока "Служба поддержки"
+  &__support {
+  //background: lightpink;
+  width: 175px;
+  height: 162px;
+  padding: 0 0 0 34px;
+  //Эти правила действуют при ширине экрана меньше 1198px
+  @media (max-width: 1198px) {
+  margin-top: 40px;
+  } 
+  //Эти правила действуют при ширине экрана меньше 600px
+  @media (max-width: 600px) {
+      margin-left: 0;
+      margin-right: 0;
+      }
+  //Эти правила действуют при ширине экрана меньше 430px
+  @media (max-width: 440px) {
+      height: auto;
+      margin-bottom: 47px;
+      } 
+   //Эти правила действуют при ширине экрана меньше 422px
+  @media (max-width: 422px) {
+      height: auto;
+      margin-top: 25px;
+      margin-bottom: 25px;
+      }  
+  }
+  //.footer__subscription=====================Позиционирование блока "Подписка"
+  &__subscription {
+  //background: lightsteelblue;
+  width: 260px;
+  height: 164px;
+  padding: 0 0 0 24px;
+  //Эти правила действуют при ширине экрана меньше 1198px
+  @media (max-width: 1198px) {
+     margin-top: 40px;
+  } 
+  //Эти правила действуют при ширине экрана меньше 600px
+  @media (max-width: 600px) {
+      width: 90%;
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 0 0 0 0;
+      }
+  
+  }
 }
-/*navigation==================================================Блок "Навигация"*/
+//navigation==================================================Блок "Навигация"
 .navigation {
-	/*.navigation__list*/
-	&__list {
-	margin: 0;
-	padding: 0;
-	}
-	/*.navigation__item-title*/
-	&__item-title {
-	//background: lightgreen;
-	list-style-type: none; //Убираем маркеры 
-	text-transform: uppercase; //Текст заглавными буквами
-	text-decoration: none;
-	font-family: 'Montserrat-Regular', sans-serif;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 12px;
-	color: Dark 100%;
-	margin: 3px 0 11px 0;
-	}
-	/*.navigation__item*/
-	&__item {
-	list-style-type: none; //Убираем маркеры
-	}
-	/*.navigation__link*/
-	&__link {
-	text-decoration: none;
-	font-family: 'Montserrat-Regular', sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 38px;
-    margin: 0 0 0 1px; 
-	color: $DarkColortwo; //Dark 50%
-	}
+  //.navigation__list
+  &__list {
+  margin: 0;
+  padding: 0;
+  }
+  //.navigation__item-title
+  &__item-title {
+  //background: lightgreen;
+  list-style-type: none; //Убираем маркеры 
+  text-transform: uppercase; //Текст заглавными буквами
+  text-decoration: none;
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  color: Dark 100%;
+  margin: 3px 0 11px 0;
+  }
+  //.navigation__item
+  &__item {
+  list-style-type: none; //Убираем маркеры
+  }
+  //.navigation__link
+  &__link {
+  text-decoration: none;
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 38px;
+  margin: 0 0 0 1px; 
+  color: $DarkColortwo; //Dark 50%
+  }
 }
-/*about-us====================================================Блок "О нас"*/
+//about-us====================================================Блок "О нас"
 .about-us {
-	/*.about-us__list*/
-	&__list {
-	margin: 0;
-	padding: 0;
-	}
-	/*.about-us__item-title*/
-	&__item-title {
-	//background: lightgreen;
-	list-style-type: none; //Убираем маркеры 
-	text-transform: uppercase; //Текст заглавными буквами
-	text-decoration: none;
-	font-family: 'Montserrat-Regular', sans-serif;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 11px;
-	color: Dark 100%;
-	margin: 7px 0 11px 0;
-	}
-	/*.about-us__item*/
-	&__item {
-	list-style-type: none; //Убираем маркеры
-	}
-	/*.about-us__link*/
-	&__link {
-	text-decoration: none;
-	font-family: 'Montserrat-Regular', sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 38px;
-	color: $DarkColortwo; //Dark 50%
-	}
+  //.about-us__list
+  &__list {
+  margin: 0;
+  padding: 0;
+  }
+  //.about-us__item-title
+  &__item-title {
+  //background: lightgreen;
+  list-style-type: none; //Убираем маркеры 
+  text-transform: uppercase; //Текст заглавными буквами
+  text-decoration: none;
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 11px;
+  color: Dark 100%;
+  margin: 7px 0 11px 0;
+  }
+  //.about-us__item
+  &__item {
+  list-style-type: none; //Убираем маркеры
+  }
+  //.about-us__link
+  &__link {
+  text-decoration: none;
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 38px;
+  color: $DarkColortwo; //Dark 50%
+  }
 }
-/*support====================================================Блок "Служба поддержки"*/
+//support====================================================Блок "Служба поддержки"
 .support {
-	/*.support__list*/
-	&__list {
-	margin: 0;
-	padding: 0;
-	}
-	/*.support__item-title*/
-	&__item-title {
-	//background: lightpink;
-	list-style-type: none; //Убираем маркеры 
-	text-transform: uppercase; //Текст заглавными буквами
-	text-decoration: none;
-	font-family: 'Montserrat-Regular', sans-serif;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 12px;
-	color: Dark 100%;
-	margin: 2px 0 11px 0;
-	}
-	/*.support__item*/
-	&__item {
-	list-style-type: none; //Убираем маркеры
-	}
-	/*.support__link*/
-	&__link {
-	text-decoration: none;
-	font-family: 'Montserrat-Regular', sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 38px;
-	color: $DarkColortwo; //Dark 50%
-	}
+  //.support__list
+  &__list {
+  margin: 0;
+  padding: 0;
+  }
+  //.support__item-title
+  &__item-title {
+  //background: lightpink;
+  list-style-type: none; //Убираем маркеры 
+  text-transform: uppercase; //Текст заглавными буквами
+  text-decoration: none;
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  color: Dark 100%;
+  margin: 2px 0 11px 0;
+  }
+  //.support__item
+  &__item {
+  list-style-type: none; //Убираем маркеры
+  }
+  //.support__link
+  &__link {
+  text-decoration: none;
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 38px;
+  color: $DarkColortwo; //Dark 50%
+  }
 }
-/*subscription====================================================Блок "Подписка"*/
+//subscription====================================================Блок "Подписка"
 .subscription {
-	/*.subscription__title*/
-	&__title {
-	//background: lightpink;
-	list-style-type: none; //Убираем маркеры 
-	text-transform: uppercase; //Текст заглавными буквами
-	text-decoration: none;
-	font-family: 'Montserrat-Regular', sans-serif;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 12px;
-	color: Dark 100%;
-	padding: 0;
-	margin: 2px 0 18px 0;
-	}
-	/*.subscription__text*/
-	&__text {
-	//background: lightpink;
-    margin: 0 0 22px 0;
-	font-family: 'Montserrat-Regular', sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 24px;
-	color: $DarkColortwo; //Dark 50%
-	}
-	/*.subscription__form-email*/
-	&__form-email {
-	margin: 0;
-	padding-left: 12px;
-	width: 94%;
-	height: 40px;
-	color: #5a5854; /*Цвет текста формы*/
-	background-color: #ffffff; /*Цвет формы*/
-	border: 1px solid #bdbdbd; /*Граница формы*/
-	border-radius: 5px;
-	background-repeat: no-repeat; /*Отменяет повтор вставленной картинки (значение по умолчанию)*/
-	background-position: 95% 50%; /*Местоположение вставленной картинки*/
-	font-family: 'Montserrat-Regular', sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 14px;
-	}
-	input.subscription__form-email:focus, input:hover { //Используется для изменения цвета фона введенного текста (focus); Применяет стили при наведении указателя мыши (hover) 
-		background-color: #f2f2f2; // Цвет формы
-		border: 1px solid #b1e1e4; // Граница формы
-	}
-	input#img-form { /*Вставка картинки в форму*/
-		background-image: url('./assets/img/arrow_forward.svg');
-	} 
+  //.subscription__title
+  &__title {
+  //background: lightpink;
+  list-style-type: none; //Убираем маркеры 
+  text-transform: uppercase; //Текст заглавными буквами
+  text-decoration: none;
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  color: Dark 100%;
+  padding: 0;
+  margin: 2px 0 18px 0;
+  }
+  //.subscription__text
+  &__text {
+  //background: lightpink;
+  margin: 0 0 22px 0;
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: $DarkColortwo; //Dark 50%
+  }
+  //.subscription__form-email
+  &__form-email {
+  margin: 0;
+  padding-left: 12px;
+  width: 94%;
+  height: 40px;
+  color: #5a5854; // текста формы
+  background-color: #ffffff; //Цвет формы
+  border: 1px solid #bdbdbd; //Граница формы
+  border-radius: 5px;
+  background-repeat: no-repeat; //Отменяет повтор вставленной картинки (значение по умолчанию)
+  background-position: 95% 50%; //Местоположение вставленной картинки
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  }
+  input.subscription__form-email:focus, input:hover { // Используется для изменения цвета фона введенного текста (focus); Применяет стили при наведении указателя мыши (hover) 
+      background-color: #f2f2f2; // Цвет формы
+      border: 1px solid #b1e1e4; // Граница формы
+  }
+  input#img-form { //Вставка картинки в форму
+      background-image: url('./assets/img/arrow_forward.svg');
+  } 
 }
 .line {
 height: 1px;
-background: $DarkColortwo;	
+background: $DarkColortwo;  
 }
 .line__bottom {
 height: 1px;
 background: $DarkColortwo;
 //Эти правила действуют при ширине экрана меньше 1188px
 @media (max-width: 1188px) {
-	margin-top: 25px;	
-	}
+  margin-top: 25px;   
+  }
 //Эти правила действуют при ширине экрана меньше 300px
 @media (max-width: 300px) {
     margin-top: 45px;
     }
 }
 .footer {
-	/*.footer__bottom==========================================Нижняя часть подвала*/
-	&__bottom {
-		display: flex;
-        flex-direction: row;
-		justify-content: space-between;
-        flex: 0 1 1170px; //Адаптивно задаются размеры блока
-	}
-	/*.footer__copyright===================================================Копирайт*/
-	&__copyright {
-	}
-	/*.footer__social-network=======================================Иконки соцсетей*/
-	&__social-network {
-    //background: green;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: flex-end;
-	flex: 0 1 470px; //Адаптивно задаются размеры блока
-	}
-	/*.footer__copyright*/
-	&__copyright {
-	//background: lightpink;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	//justify-content: flex-start;
-	flex: 0 1 700px; //Адаптивно задаются размеры блока
-	padding: 13px 0 0 8px;
-	}
-	/*.footer__text-copyright*/
-	&__text-copyright {
-	margin-top: 15px;
-	font-family: 'Montserrat-Regular', sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 14px;
-	color: $DarkColortwo; //Dark 50%
-	}
+  //.footer__bottom==========================================Нижняя часть подвала
+  &__bottom {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex: 0 1 1170px; //Адаптивно задаются размеры блока
+  }
+
+  //.footer__social-network=======================================Иконки соцсетей
+  &__social-network {
+  //background: green;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 1 470px; //Адаптивно задаются размеры блока
+  margin-bottom: 10px;
+  }
+  //.footer__copyright===================================================Копирайт
+  &__copyright {
+  //background: lightpink;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  //justify-content: flex-start;
+  flex: 0 1 700px; //Адаптивно задаются размеры блока
+  padding: 13px 0 0 8px;
+  margin-bottom: 10px;
+  }
+  //.footer__text-copyright
+  &__text-copyright {
+  margin-top: 15px;
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: $DarkColortwo; //Dark 50%
+  }
 }
 .social-network {
-	/*.social-network__twitter-link*/
-	&__twitter-link {
-	}
-	/*.social-network__twitter-icon*/
-	&__twitter-icon {	//background: orange;
-	background-image: url('./assets/img/Twitter.svg');//Изображение ставиться фоном в блоке
-	background-repeat: no-repeat;
-	background-position: center; 
-	height: 25px;
-	width: 25px;
-    margin: 8px 0 0 18px;
-	}
-	/*.social-network__facebook-link*/
-	&__facebook-link {
-	}
-	/*.social-network__facebook-icon*/
-	&__facebook-icon {
-	background-image: url('./assets/img/Facebook.svg');//Изображение ставиться фоном в блоке
-	background-repeat: no-repeat;
-	background-position: center; 
-	height: 25px;
-	width: 25px;
-	margin: 8px 0 0 19px;
+  //.social-network__twitter-link
+  &__twitter-link {
+  }
+  //.social-network__twitter-icon
+  &__twitter-icon {   //background: orange;
+  background-image: url('./assets/img/Twitter.svg');//Изображение ставиться фоном в блоке
+  background-repeat: no-repeat;
+  background-position: center; 
+  height: 25px;
+  width: 25px;
+  margin: 8px 0 0 18px;
+  }
+  //.social-network__facebook-link
+  &__facebook-link {
+  }
+  //.social-network__facebook-icon
+  &__facebook-icon {
+  background-image: url('./assets/img/Facebook.svg');//Изображение ставиться фоном в блоке
+  background-repeat: no-repeat;
+  background-position: center; 
+  height: 25px;
+  width: 25px;
+  margin: 8px 0 0 19px;
 
-	}
-	/*.social-network__instagram-link*/
-	&__instagram-link {
-	}
-	/*.social-network__instagram-icon*/
-	&__instagram-icon {
-	background-image: url('./assets/img/Instagram.svg');//Изображение ставиться фоном в блоке
-	background-repeat: no-repeat;
-	background-position: center; 
-	height: 25px;
-	width: 25px;
-	margin: 8px 0 0 19px;
-	}
+  }
+  //.social-network__instagram-link
+  &__instagram-link {
+  }
+  //.social-network__instagram-icon
+  &__instagram-icon {
+  background-image: url('./assets/img/Instagram.svg');//Изображение ставиться фоном в блоке
+  background-repeat: no-repeat;
+  background-position: center; 
+  height: 25px;
+  width: 25px;
+  margin: 8px 0 0 19px;
+  }
 }

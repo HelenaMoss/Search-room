@@ -1,28 +1,28 @@
 //- Обертка для Блока поиска номеров
 div.search-room-form
-    //- Блок поиска номеров
-    div.search-room-form__search-room
-        p.search-room-form__text Найдём номера под ваши пожелания
-        //- Форма поиска номеров
-        form.search-room-form__form(action="#", metod="get")
-            div.search-room-form__container-arrivel
-                p.search-room-form__button-title-arrivel Прибытие
-                //- Элемент формы "Прибытие"
-                input.search-room-form__button-arrivel#img-form(type="date", name="arrivel", required, pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}", title="ДД.ММ.ГГГГ, например: 02.12.2005")
-            div.search-room-form__container-departure
-                p.search-room-form__button-title-departure Выезд
-                //- Элемент формы "Выезд"
-                input.search-room-form__button-departure#img-form(type="date", name="departure", required, pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}", title="ДД.ММ.ГГГГ, например: 02.12.2005")
-            div.search-room-form__container-guests
-                p.search-room-form__button-title-guests Гости
-                //- Элемент формы "Гости"
-                select.search-room-form__button-guests#img-form(name="guests")
-                    option.search-room-form__button-guests-how-many(value="how-many") Сколько гостей
-                    option.search-room-form__button-guests-adults(value="adults") Взрослые
-                    option.search-room-form__button-guests-children(value="children") Дети
-                    option.search-room-form__button-guests-infants(value="infants") Младенцы
-                    option.search-room-form__button-guests-clear(value="clear") Очистить
-                //- Кнопка подтверждения
-            button.search-room-form__button-pick-up-number#img-pick-up-number(type="submit", value="Подобрать номер") 
-                p.search-room-form__button-text Подобрать номер
-                img.search-room-form__button-img(src="arrow_forwardwhite.svg")
+  //- Блок поиска номеров
+  div.search-room-form__search-room
+      p.search-room-form__text Найдём номера под ваши пожелания
+      //- Форма поиска номеров
+      form.search-room-form__form(action="#", metod="get")
+          div.search-room-form__container-arrivel
+              p.search-room-form__button-title-arrivel Прибытие
+              //- Элемент формы "Прибытие"
+              input.search-room-form__button-arrivel.img-form(type="date", name="arrivel", required, pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}", title="ДД.ММ.ГГГГ, например: 02.12.2005")
+          div.search-room-form__container-departure
+              p.search-room-form__button-title-departure Выезд
+              //- Элемент формы "Выезд"
+              input.search-room-form__button-departure.img-form(type="date", name="departure", required, pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}", title="ДД.ММ.ГГГГ, например: 02.12.2005")
+          div.search-room-form__container-guests
+              p.search-room-form__button-title-guests Гости
+              //- Элемент формы "Гости"
+              select.search-room-form__button-guests.img-form(name="guests")
+                  option.search-room-form__button-guests-how-many(value="how-many") Сколько гостей
+                  option.search-room-form__button-guests-adults(value="adults") Взрослые
+                  option.search-room-form__button-guests-children(value="children") Дети
+                  option.search-room-form__button-guests-infants(value="infants") Младенцы
+                  option.search-room-form__button-guests-clear(value="clear") Очистить
+              //- Кнопка подтверждения
+          button.search-room-form__button-pick-up-number#img-pick-up-number(type="submit", value="Подобрать номер") 
+              p.search-room-form__button-text Подобрать номер
+              img.search-room-form__button-img(src="arrow_forwardwhite.svg")

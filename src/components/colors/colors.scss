@@ -1,0 +1,36 @@
+
+.container-colors {
+  display: flex;
+}
+
+.color-box {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    margin: 0 40px 20px 0;
+    @media (max-width: 360px) {
+      margin-right: 25px;
+    }
+  }
+
+.name-code-colors-box {
+  margin-top: 11px;
+  margin-bottom: 42px; 
+}
+
+.name-code-colors-box__name {
+  font-family: 'Montserrat-Bold', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: calc(16px + 3 * (100vw / 1340));
+  margin-bottom: 2px;
+  color: #1F2041;
+}
+
+.name-code-colors-box__code {
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: calc(22px - 3 * (100vw / 1340));
+  color: #1F2041;
+}

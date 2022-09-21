@@ -1,0 +1,17 @@
+
+include ../components/logo/logo.pug
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    //-Задается параметр "Ширина сайта равна 100% от заданных в коде параметров"
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Search room_the 2nd task MetaLamp
+    link(rel="icon", href="favicon.ico", type="image/ico")
+  body
+    block header
+    header.header
+      a.header__logo-link(href="https://www.figma.com/proto/MumYcKVk9RkKZEG6dR5E3A/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task?node-id=18374%3A5" target="_blank")
+        +logo('element_logo', 'header__ui-kit-element-logo')
+    block content

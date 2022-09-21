@@ -1,294 +1,297 @@
 .header {
-	background: #FFF;
-/*Фиксирование шапки на странице*/
-	//.header__wrapper {
-	//position: fixed;
-	//width: 100%;
-	//background: #FFF;
-	//left: 0;
-	//top: 0;
-	//z-index: 50;
-//}
-	/*header__container===========Ограничивающий контейнер + отступы от края страницы при адаптиве*/
-	&__container {
-	max-width: $maxWidthContainer; //Параметр позволяет динамически менять ширину контейнера от 0 до 1160px
-	padding: 0 15px; //Добавляются отступы по 15px при уменьшении страницы меньше значения max-width
-	margin: 0 auto;
-	display: -ms-flexbox;//решение для устранения бага в IE11: неработающий align-items при использовании min-height 
-	}
-	/*header__body=====================================================================Тело шапки*/
-	&__body {
-	//background: yellow;
-	margin: auto; //Центрирование на странице
-	display: flex; //Создание flex-контейнера и выстраивание всех объектов в ряд
-	justify-content: space-between; 
-	padding: 0;
-	min-height: 67px; //Задаётся минимальная высота шапки
-	//max-width: $maxWidthContainer; //задается максимальное значение ширины контентной части
-	align-items: center; //Выравнивание объектов по вертикали в однострочном режиме
-	flex: 0 1 1160px; //Адаптивно задаются размеры блока
-	//Эти правила действуют при ширине экрана меньше 945px
-	@media (max-width: 945px) {
-		display: flex;
-		flex-wrap: wrap; //Включение многострочного режима для flex-контейнера
-		justify-content: space-around; // Элементы равномерно распределяются с одинаковым расстоянием по краям
-		padding-top: 6px; //Отступ сверху, для того чтобы блок с логотипом не прилипал к верхнему краю при адаптиве 
-		} 
-	}
-	/*header__logo==========================================================================Логотип*/
-	&__logo {
-	//background: orange; 
-	height: 40px;
-	width: 108px;
-	border: none; //Для IE более ранних версий
-	}
-	/*header__menu===============================================================================Меню*/
-	&__menu {
-	//background: pink;
-	display: flex;
-	flex: 0 25 725px; //Адаптивно задаются размеры блока Меню
-	justify-content: flex-end; //Выравнивание элементов в одной строке по горизонтали по правому краю
-	//Эти правила действуют при ширине экрана меньше 945px
-	@media (max-width: 945px) {
-		display: flex;
-		flex: 0 1 945px; //Адаптивно задаются размеры блока меню
-		flex-wrap: wrap;
-		justify-content: center;
-		order: 1; //Изменение порядка расположения блока во flex-контейнере при адаптиве
-		margin-bottom: 8px; //Отступ снизу для разделов меню, когда элементы располагаются в несколько строк
-		margin-top: 5px; //Отступ сверху для разделов меню, когда элементы располагаются в несколько строк
-		} 
-	}
-.menu {
-	/*menu__list==================================================================Блок с элементами меню*/
-	&__list {
-	//background: lightblue;	
-	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;	
-	}
+  background: #FFF;
 
-	/*menu__item============================================================Элементы меню: текcт+стрелки*/
-	&__item {
-	//background: orange;
-	display: flex; //Поставить элементы меню в ряд c кнопками в виде стрелок
-	align-items: center;
-	@media (max-width: 935px) {
-		&:first-child {
-		margin-left: 0px; //Задается 0 отступ первому элементу в списке 
-		}
-	}
-	padding: 5px 0;
-	position: relative; //Это свойство задается для того, чтобы использовать z-index для выпадающего меню 
-	//Настройка анимации стрелки и отображения выпадающего меню при наведении указателя мыши на элементы меню
-	@media (any-hover: hover){ //Показывается подменю при наведении мыши на родительский элемент
-		&:hover{
-			.menu__sub-list {
-				opacity: 1;
-				visibility: visible; //Элемент виден
-				pointer-events: auto;
-				z-index: 50; //Показывает выпадающее меню поверх всех остальных элементов
-			}
-			.menu__arrow {
-				transform: rotate(-180deg); //Поворот стрелки на 180 градусов
-				padding: 0 6px 0 0; //Создание отступа слева от стрелки. Задется изменением параметра padding-right, так как стрелка перевернется на 180 градусов
-			}
-			.menu__arrow,
-			.menu__link {
-				color: $GreenColor;
-				}
-			}
-		}
-	}
-	/*menu__link==================================================================Текстовые ссылки в меню*/
-	&__link {
-	text-decoration: none;
-	font-family: 'Montserrat-Regular', sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 17px;
-	color: $DarkColortwo; //Dark 50%
-	transition: color 1s ease 0s; //Подсвечмвание элементов меню при раскрытии выпадающего списка
-	}
-	/*menu__arrow======================================================Стрелка возле текстовых ссылок в меню*/
-	&__arrow {
-	margin: 0 0 0 0;
-	padding: 0 0 0 6px; //Отступ слева между стрелкой и текстовым элементом
-	transition: all 0.3s ease 0s;
-	font-size: 8px;
-	border: none; //Отмена обводки кнопки по умолчанию 
-	background: none; //Отмена обводки кнопки по умолчанию
-	color: $DarkColortwo; //Dark 50%
-	}
-	/* menu__item_menu__item_indent-onas=========================Настраиваем отступ слева у раздела меню "О нас"*/
-	&__item_menu__item_indent-onas { //Переопределение отступа слева у раздела "О нас"
-	margin-left: 20.7px;
-	//Определение правил поведения для элементов при ширине экрана меньше 768px
-	@media (max-width: $md3+px) {
-		margin-left: 0;
-		}
-	}
-	/*menu__item_indent-uslugi================================================Обертка для раздела меню "Услуги"*/ 
-	&__item_indent-uslugi {
-	//background:lightyellow;
-	width: 89px;
-	display: flex;
-	justify-content: flex-end;
-	}
-	/*menu__item_indent-vakancii===============================================Обертка для раздела меню "Вакансии"*/
-	&__item_indent-vakancii {
-	//background: yellow;
-	width: 96px;
-	display: flex;
-	justify-content: flex-end;
-	//Определение правил поведения для элементов при ширине экрана меньше 256px
-	@media (max-width: 256px) {
-		justify-content: center;
-		}
-	}
-	/*menu__item_indent-novosti====================================================Обертка для раздела меню "Новости"*/
-	&__item_indent-novosti {
-	//background: lightyellow;
-	width: 82px;
-	display: flex;
-	justify-content: flex-end;
-	//Определение правил поведения для элементов при ширине экрана меньше 338px
-	@media (max-width: 338px) {
-		justify-content: center;
-		}
-	}
-	/*menu__item_indent-soglashenia================================================Обертка для раздела меню "Соглашения"*/
-	&__item_indent-soglashenia {
-	//background: yellow;
-	width: 131px;
-	display: flex;
-	justify-content: flex-end;
-	//Определение правил поведения для элементов при ширине экрана меньше 469px
-	@media (max-width: 469px) {
-		justify-content: center;
-		}
-	//Определение правил поведения для элементов при ширине экрана меньше 254px
-	@media (max-width: 254px) {
-		justify-content: center;
-		}
-	}
-	/*menu__sub-list========================================================================================Выпадающее меню*/
-	&__sub-list {
-	position: relative;
-	background-color: lightgrey;
-	padding: 15px;
-	flex: 1 1 100%;
-	list-style-type: none;
-	//Эти правила действуют при ширине экрана больше 768px
-	@media (min-width: $md3+px) {
-		opacity: 0;
-		transition: all 0.3s ease 0s;
-		visibility: hidden; //Свойство предназначен для отображения или скрытия элемента
-		min-width: 100%;
-		pointer-events: none;
-		position: absolute;
-		top: 100%;
-		left: 0;
-	} 
-	//Эти правила действуют при ширине экрана меньше 768px
-	@media (max-width: $md3+px) {
-		opacity: 0;
-		transition: all 0.3s ease 0s;
-		visibility: hidden; //Свойство предназначен для отображения или скрытия элемента
-		min-width: 100%;
-		pointer-events: none;
-		position: absolute;
-		top: 100%;
-		left: 0;
-		} 
-	}
-	/*menu__sub-item================================================Элементы выпадающего меню*/
-	&__sub-item {
-	&:not(:last-child) {
-		margin: 0 0 3px 0; //Задается отступ снизу всем элементам, кроме последнего
-		}
-	}
-	/*menu__sub-link====================================================Ссылки в выпадающем меню*/
-	&__sub-link {
-	text-decoration: none;
-	color: $DarkColortwo; //Dark 50%
-	font-family: 'Montserrat-Regular', sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 17px; 
-	}
+  //header__container===========Ограничивающий контейнер + отступы от края страницы при адаптиве
+  &__container {
+  max-width: $maxWidthContainer; //Параметр позволяет динамически менять ширину контейнера от 0 до 1160px
+  padding: 0 15px; //Добавляются отступы по 15px при уменьшении страницы меньше значения max-width
+  margin: 0 auto;
+  display: -ms-flexbox;//решение для устранения бага в IE11: неработающий align-items при использовании min-height 
+  }
+  //header__body=======================================================Тело шапки
+  &__body {
+  //background: yellow;
+  margin: auto; //Центрирование на странице
+  display: flex; //Создание flex-контейнера и выстраивание всех объектов в ряд
+  justify-content: space-between; 
+  padding: 0;
+  min-height: 67px; //Задаётся минимальная высота шапки
+  //max-width: $maxWidthContainer; //задается максимальное значение ширины контентной части
+  align-items: center; //Выравнивание объектов по вертикали в однострочном режиме
+  flex: 0 1 1160px; //Адаптивно задаются размеры блока
+  //Эти правила действуют при ширине экрана меньше 945px
+  @media (max-width: 945px) {
+    display: flex;
+    flex-wrap: wrap; //Включение многострочного режима для flex-контейнера
+    justify-content: space-around; // Элементы равномерно распределяются с одинаковым расстоянием по краям
+    padding-top: 6px; //Отступ сверху, для того чтобы блок с логотипом не прилипал к верхнему краю при адаптиве 
+    } 
+  }
+  //header__logo==============================================================Логотип
+  &__logo {
+  //background: orange; 
+  height: 40px;
+  width: 108px;
+  border: none; //Для IE более ранних версий
+  @media (max-width: 496px) {
+    margin-top: 5px;
+    }
+  }
+  //header__menu=================================================================Меню
+  &__menu {
+  //background: pink;
+  display: flex;
+  flex: 0 25 725px; //Адаптивно задаются размеры блока Меню
+  justify-content: flex-end; //Выравнивание элементов в одной строке по горизонтали по правому краю
+  //Эти правила действуют при ширине экрана меньше 945px
+  @media (max-width: 945px) {
+    display: flex;
+    flex: 0 1 945px; //Адаптивно задаются размеры блока меню
+    flex-wrap: wrap;
+    justify-content: center;
+    order: 1; //Изменение порядка расположения блока во flex-контейнере при адаптиве
+    margin-bottom: 8px; //Отступ снизу для разделов меню, когда элементы располагаются в несколько строк
+    margin-top: 5px; //Отступ сверху для разделов меню, когда элементы располагаются в несколько строк
+    } 
+  }
+.menu {
+  //menu__list=================================================Блок с элементами меню
+  &__list {
+  //background: lightblue;  
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  
+  }
+
+  //menu__item===========================================Элементы меню: текcт+стрелки
+  &__item {
+  //background: orange;
+  display: flex; //Поставить элементы меню в ряд c кнопками в виде стрелок
+  align-items: center;
+  @media (max-width: 935px) {
+    &:first-child {
+    margin-left: 0px; //Задается 0 отступ первому элементу в списке 
+    }
+  }
+  padding: 5px 0;
+  position: relative; //Это свойство задается для того, чтобы использовать z-index для выпадающего меню 
+  //Настройка анимации стрелки и отображения выпадающего меню при наведении указателя мыши на элементы меню
+  @media (any-hover: hover){ //Показывается подменю при наведении мыши на родительский элемент
+    &:hover{
+      .menu__sub-list {
+        opacity: 1;
+        visibility: visible; //Элемент виден
+        pointer-events: auto;
+        z-index: 50; //Показывает выпадающее меню поверх всех остальных элементов
+      }
+      .menu__arrow {
+        transform: rotate(-180deg); //Поворот стрелки на 180 градусов
+        padding: 0 6px 0 0; //Создание отступа слева от стрелки. Задется изменением параметра padding-right, так как стрелка перевернется на 180 градусов
+      }
+      .menu__arrow,
+      .menu__link {
+        color: $GreenColor;
+        }
+      }
+    }
+  }
+  //menu__link================================================Текстовые ссылки в меню
+  &__link {
+  text-decoration: none;
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: $DarkColortwo; //Dark 50%
+  transition: color 1s ease 0s; //Подсвечмвание элементов меню при раскрытии выпадающего списка
+  }
+  //menu__arrow=================================Стрелка возле текстовых ссылок в меню
+  &__arrow {
+  margin: 0 0 0 0;
+  padding: 0 0 0 6px; //Отступ слева между стрелкой и текстовым элементом
+  transition: all 0.3s ease 0s;
+  font-size: 8px;
+  border: none; //Отмена обводки кнопки по умолчанию 
+  background: none; //Отмена обводки кнопки по умолчанию
+  color: $DarkColortwo; //Dark 50%
+  }
+  //menu__item_menu__item_indent-onas============Настраиваем отступ слева у раздела меню "О нас"
+  &__item_menu__item_indent-onas { //Переопределение отступа слева у раздела "О нас"
+  margin-left: 20.7px;
+  //Определение правил поведения для элементов при ширине экрана меньше 768px
+  @media (max-width: $md3) {
+    margin-left: 0;
+    }
+  }
+  //menu__item_indent-uslugi==================================Обертка для раздела меню "Услуги" 
+  &__item_indent-uslugi {
+  //background:lightyellow;
+  width: 89px;
+  display: flex;
+  justify-content: flex-end;
+  }
+  //menu__item_indent-vakancii==============================Обертка для раздела меню "Вакансии"
+  &__item_indent-vakancii {
+  //background: yellow;
+  width: 96px;
+  display: flex;
+  justify-content: flex-end;
+  //Определение правил поведения для элементов при ширине экрана меньше 256px
+  @media (max-width: 256px) {
+    justify-content: center;
+    }
+  }
+  //menu__item_indent-novosti===============================Обертка для раздела меню "Новости"
+  &__item_indent-novosti {
+  //background: lightyellow;
+  width: 82px;
+  display: flex;
+  justify-content: flex-end;
+  //Определение правил поведения для элементов при ширине экрана меньше 338px
+  @media (max-width: 338px) {
+    justify-content: center;
+    }
+  }
+  //menu__item_indent-soglashenia=======================Обертка для раздела меню "Соглашения"
+  &__item_indent-soglashenia {
+  //background: yellow;
+  width: 131px;
+  display: flex;
+  justify-content: flex-end;
+  //Определение правил поведения для элементов при ширине экрана меньше 469px
+  @media (max-width: 469px) {
+    justify-content: center;
+    }
+  //Определение правил поведения для элементов при ширине экрана меньше 254px
+  @media (max-width: 254px) {
+    justify-content: center;
+    }
+  }
+  //menu__sub-list==========================================================Выпадающее меню
+  &__sub-list {
+  position: relative;
+  background-color: lightgrey;
+  padding: 15px;
+  flex: 1 1 100%;
+  list-style-type: none;
+  //Эти правила действуют при ширине экрана больше 768px
+  @media (min-width: $md3) {
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+    visibility: hidden; //Свойство предназначен для отображения или скрытия элемента
+    min-width: 100%;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  } 
+  //Эти правила действуют при ширине экрана меньше 768px
+  @media (max-width: $md3) {
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+    visibility: hidden; //Свойство предназначен для отображения или скрытия элемента
+    min-width: 100%;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    } 
+  }
+  //menu__sub-item===========================================Элементы выпадающего меню
+  &__sub-item {
+  &:not(:last-child) {
+    margin: 0 0 3px 0; //Задается отступ снизу всем элементам, кроме последнего
+    }
+  }
+  //menu__sub-link===========================================Ссылки в выпадающем меню
+  &__sub-link {
+  text-decoration: none;
+  color: $DarkColortwo; //Dark 50%
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px; 
+  }
 }
-/*Авторизация на сайте*/
+//Авторизация на сайте
 .header__authorization {
-	//background: lightblue;
-	display: flex;
-	align-items: center; //Выравнивание блоков по вертикали по центру
-	//Эти правила действуют при ширине экрана больше 465px
-	@media (min-width: 465px) {
-	width: 329px;//Создается фиксированная ширина контейнера для предотвращения преждевременного переноса блока на след. строчку при адаптиве. 
-	}
-	//Эти правила действуют при ширине экрана меньше 465px
-	@media (max-width: 465px) {
-		flex-wrap: wrap;
-		justify-content: center;
-		margin: 25px 0 5px 0;
-		width: 100%;
-	}
+  //background: lightblue;
+  display: flex;
+  align-items: center; //Выравнивание блоков по вертикали по центру
+   //Эти правила действуют при ширине экрана меньше 496px
+  @media (max-width: 496px) {
+    margin: 25px 0 5px 0;
+  }
+  //Эти правила действуют при ширине экрана больше 465px
+  @media (min-width: 465px) {
+  width: 329px;//Создается фиксированная ширина контейнера для предотвращения преждевременного переноса блока на след. строчку при адаптиве. 
+  }
+  //Эти правила действуют при ширине экрана меньше 465px
+  @media (max-width: 465px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 25px 0 5px 0;
+    width: 100%;
+  }
 }
-	/*button.header__entrance-button===========================================Кнопка "Войти"*/
-	&__entrance-button {
-	border: none; //Отмена обводки кнопки по умолчанию 
-	background: none; //Отмена обводки кнопки по умолчанию
-	background-image: url('./assets/img/entrance-button.svg');
-	background-repeat: no-repeat;
-	background-position: center; 
-	width: 87px;
-	height: 34px;
-	margin: 0 20px 3px 26px;
-	//Эти правила действуют при ширине экрана меньше 465px
-	@media (max-width: 465px) {
-		margin-left: 0;
-		}
-	//Эти правила действуют при ширине экрана меньше 332px
-	@media (max-width: 332px) {
-		margin-bottom: 10px;
-		margin-left: 20px;
-		}
-	}
-	/*header__entrance-link==========================================Ссылка в кнопке "Войти"*/
-	&__entrance-link {
-	text-decoration: none;
-	font-family: 'Montserrat-Bold', sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 12px;
-	line-height: 15px;
-	text-transform: uppercase;
-	color: $PurpleColor; //Фиолетовый цвет	
-	}
-	/*button.header__registration-button==================================Кнопка "Регистрация"*/
-	&__registration-button {
-	border: none;
-	background: none;
-	background-image: url('./assets/img/registration-button.svg');
-	background-repeat: no-repeat;
-	width: 196px;
-	height: 34px;
-	margin: 0 0 3px 1px;
-	}
-	/*header__registration-link======================================Ссылка в кнопке "Регистрация"*/
-	&__registration-link {
-	text-decoration: none;
-	font-family: 'Montserrat-Bold', sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 12px;
-	line-height: 15px;
-	text-transform: uppercase;
-	color: $WhiteColor; //Dark 50%
-	}
+  //button.header__entrance-button=================================Кнопка "Войти"
+  &__entrance-button {
+  border: none; //Отмена обводки кнопки по умолчанию 
+  background: none; //Отмена обводки кнопки по умолчанию
+  background-image: url('./assets/img/entrance-button.svg');
+  background-repeat: no-repeat;
+  background-position: center; 
+  width: 87px;
+  height: 34px;
+  margin: 0 20px 3px 26px;
+  //Эти правила действуют при ширине экрана меньше 496px
+  @media (max-width: 496px) {
+    margin-left: 14px;
+    }
+  //Эти правила действуют при ширине экрана меньше 465px
+  @media (max-width: 465px) {
+    margin-left: 0;
+    }
+  //Эти правила действуют при ширине экрана меньше 332px
+  @media (max-width: 363px) {
+    margin-bottom: 10px;
+    margin-left: 20px;
+    }
+  }
+  //header__entrance-link==================================Ссылка в кнопке "Войти"
+  &__entrance-link {
+  text-decoration: none;
+  font-family: 'Montserrat-Bold', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $PurpleColor; //Фиолетовый цвет  
+  }
+  //button.header__registration-button========================Кнопка "Регистрация"
+  &__registration-button {
+  border: none;
+  background: none;
+  background-image: url('./assets/img/registration-button.svg');
+  background-repeat: no-repeat;
+  width: 196px;
+  height: 34px;
+  margin: 0 0 3px 1px;
+  }
+  //header__registration-link=======================Ссылка в кнопке "Регистрация"
+  &__registration-link {
+  text-decoration: none;
+  font-family: 'Montserrat-Bold', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $WhiteColor; //Dark 50%
+  }
 }

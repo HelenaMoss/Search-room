@@ -1,78 +1,68 @@
 footer.footer
-	div.line
-	//- Ограничивающий контейнер + отступы безопасности
-	div.footer__container
-		//- Верхняя часть подвала 
-		div.footer__top
-			//- Блок с логотипом
-			div.footer__logo
-				//- Логотип
-				a.footer__logo-link(href="https://www.figma.com/proto/MumYcKVk9RkKZEG6dR5E3A/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task?node-id=18374%3A5" target="_blank")
-					img.footer__logo-img(src="logo.svg") 
-				p.footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-			//- Блок "Навигация"
-			div.footer__navigation.navigation
-				ul.navigation__list
-					li.navigation__item-title Навигация
-					li.navigation__item
-						a.navigation__link(href="#") О нас
-					li.navigation__item
-						a.navigation__link(href="#") Новости
-					li.navigation__item
-						a.navigation__link(href="#") Служба поддержки
-					li.navigation__item
-						a.navigation__link(href="#") Услуги
-			//- Блок "О нас"
-			div.footer__about-us.about-us
-				ul.about-us__list
-					li.about-us__item-title О нас
-					li.about-us__item
-						a.about-us__link(href="#") О сервисе
-					li.about-us__item
-						a.about-us__link(href="#") Наша команда
-					li.about-us__item
-						a.about-us__link(href="#") Вакансии
-					li.about-us__item
-						a.about-us__link(href="#") Инвесторы
-			//- Блок "Служба поддержки"
-			div.footer__support.support
-				ul.support__list
-					li.support__item-title Служба поддержки
-					li.support__item
-						a.support__link(href="#") Соглашения
-					li.support__item 
-						a.support__link(href="#") Сообщества
-					li.support__item
-						a.support__link(href="#") Связь с нами
-			//- Блок "Подписка"
-			div.footer__subscription.subscription
-				p.subscription__title Подписка
-				p.subscription__text Получайте специальные предложения и новости сервиса
-				form.subscription__form(action="#", metod="get") 
-					input.subscription__form-email#img-form(type="text", name="email", placeholder="Email")
-	div.line__bottom
-	//- Ограничивающий контейнер + отступы безопасности
-	div.footer__container
-		//- Нижняя часть подвала
-		div.footer__bottom
-			//- Копирайт 
-			div.footer__copyright
-				p.footer__text-copyright Copyright © 2018 Toxin отель. Все права защищены.
-			//- Иконки соцсетей
-			div.footer__social-network.social-network
-				a.social-network__twitter-link(href="#", target="_blank")
-					div.social-network__twitter-icon
-				a.social-network__facebook-link(href="#", target="_blank")
-					div.social-network__facebook-icon
-				a.social-network__instagram-link(href="#", target="_blank")
-					div.social-network__instagram-icon
-//						
-	mixin pet(name)
-		li(class= 'pet')= name
-	ul
-		+pet('cat')
-		+pet('dog')
-		+pet('pig')
-
-//img(src="../src/assets/img/icon_arrow_down.svg")
-//img(src="../src/assets/webpack-logo.png")
+  div.line
+  //- Ограничивающий контейнер + отступы безопасности
+  div.footer__container
+    //- Верхняя часть подвала 
+    div.footer__top
+      //- Блок с логотипом
+      div.footer__logo
+        //- Логотип
+        a.footer__logo-link(href="https://www.figma.com/proto/MumYcKVk9RkKZEG6dR5E3A/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task?node-id=18374%3A5" target="_blank")
+          +logo('logo','footer__logo-img')
+        p.footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+      //- Блок "Навигация"
+      div.footer__navigation.navigation
+        ul.navigation__list
+          li.navigation__item-title Навигация
+          li.navigation__item
+            a.navigation__link(href="#") О нас
+          li.navigation__item
+            a.navigation__link(href="#") Новости
+          li.navigation__item
+            a.navigation__link(href="#") Служба поддержки
+          li.navigation__item
+            a.navigation__link(href="#") Услуги
+      //- Блок "О нас"
+      div.footer__about-us.about-us
+        ul.about-us__list
+          li.about-us__item-title О нас
+          li.about-us__item
+            a.about-us__link(href="#") О сервисе
+          li.about-us__item
+            a.about-us__link(href="#") Наша команда
+          li.about-us__item
+            a.about-us__link(href="#") Вакансии
+          li.about-us__item
+            a.about-us__link(href="#") Инвесторы
+      //- Блок "Служба поддержки"
+      div.footer__support.support
+        ul.support__list
+          li.support__item-title Служба поддержки
+          li.support__item
+            a.support__link(href="#") Соглашения
+          li.support__item 
+            a.support__link(href="#") Сообщества
+          li.support__item
+            a.support__link(href="#") Связь с нами
+      //- Блок "Подписка"
+      div.footer__subscription.subscription
+        p.subscription__title Подписка
+        p.subscription__text Получайте специальные предложения и новости сервиса
+        form.subscription__form(action="#", metod="get") 
+          input.subscription__form-email#img-form(type="text", name="email", placeholder="Email")
+  div.line__bottom
+  //- Ограничивающий контейнер + отступы безопасности
+  div.footer__container
+    //- Нижняя часть подвала
+    div.footer__bottom
+      //- Копирайт 
+      div.footer__copyright
+        p.footer__text-copyright Copyright © 2018 Toxin отель. Все права защищены.
+      //- Иконки соцсетей
+      div.footer__social-network.social-network
+        a.social-network__twitter-link(href="#", target="_blank")
+          div.social-network__twitter-icon
+        a.social-network__facebook-link(href="#", target="_blank")
+          div.social-network__facebook-icon
+        a.social-network__instagram-link(href="#", target="_blank")
+          div.social-network__instagram-icon

@@ -1,0 +1,112 @@
+  // .starting-page======================================================Общая оболочка
+.starting-page { 
+background-color: azure;
+
+  // .starting-page__logo================================Оболочка для блока с логотипом 
+  &__logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  background-color: #F3F4F5;
+  margin-top: 80px;
+  padding: 15px 90px;
+  }
+  // .starting-page__logo-link=======================================Ссылка на логотипе
+  &__logo-link {
+  }
+  // .starting-page__logo-img===================================Изображение с логотипом 
+  &__logo-img {
+  width: 100%;
+  height: 150px;
+  }
+  // .starting-page__ui-kitandpages-container=======Оболочка для блока "ui kit"+"pages" 
+  &__ui-kitandpages-container {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  }
+  // .starting-page__ui-kit===============================Оболочка для блока "ui kit" 
+  &__ui-kit {
+  margin-right: 55px; 
+  background-color: azure; 
+  }
+  // .starting-page__list======================================================Cписок 
+  &__list {
+  }
+  // .starting-page__item=============================================Элементы списка 
+  &__item:first-child { //Стиль применяется только к первой строке
+  list-style-type: none;
+  }
+  // .starting-page__title===========================================Заголовки списка 
+  &__title {
+  text-decoration: none;
+  color: $DarkColortwo; //Dark 50%
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 20px;
+  line-height: 28px; 
+  }
+  // .starting-page__link=============================================Ссылки списков 
+  &__link {
+  text-decoration: none;
+  color: $DarkColortwo; //Dark 50%
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px; 
+  }
+  // .starting-page__pages================================Оболочка для блока "pages" 
+  &__pages {
+  padding-right: 25px;
+  background-color: azure;
+  padding-bottom: 25px;
+  }
+}
+
+//Эти правила действуют при ширине экрана меньше 600px
+@media (max-width: 600px) {
+  // .starting-page======================================================Общая оболочка
+  .starting-page {
+  background-size: cover;
+  min-height: 100vh;
+  }
+  //Оболочка для блока с логотипом 
+  .starting-page__logo {
+  margin-top: 0;
+  padding: 3% 10%;
+  }
+  //Оболочка для блока "ui kit"+"pages" 
+  .starting-page__ui-kitandpages-container {
+  margin-top: 0;
+  padding: 20px;
+  //margin-bottom: 10px;
+  flex-wrap: wrap;
+  }
+  .starting-page__title{
+  font-size: calc(25px + 4 * (100vw / 1340));
+  }
+  .starting-page__link{
+  font-size: calc(20px + 2 * (100vw / 1340));
+  line-height: 34px;
+  }
+  //Оболочка для блока "ui kit" 
+  .starting-page__ui-kit {
+  padding-top: 0;
+  width: 100%;
+  margin-right: 25px;
+  display: flex;
+  justify-content: center;
+  }
+  //Оболочка для блока "pages"
+  .starting-page__pages {
+  padding-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  }
+} 
